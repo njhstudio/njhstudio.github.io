@@ -1,34 +1,209 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>앱 안내</title>
+<title>NJHouse — 필요한 일만 하는 Android 앱</title>
+<meta name="description" content="계정을 요구하지 않고, 처리는 기기 안에서 끝나는 작은 Android 앱을 만듭니다.">
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    margin: 0; min-height: 100vh;
-    display: flex; align-items: center; justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-                 "Malgun Gothic", "Noto Sans KR", sans-serif;
-    background: #fafafa; color: #1a1a1a;
+  :root {
+    color-scheme: light dark;
+    --bg: #fbfbfa;
+    --surface: #ffffff;
+    --border: #e6e4e0;
+    --text: #1a1a19;
+    --muted: #6b6963;
+    --faint: #97948d;
+    --accent: #2f6f5e;
+    --badge-bg: #f0efec;
   }
   @media (prefers-color-scheme: dark) {
-    body { background: #141414; color: #eaeaea; }
-    a { color: #7cc2ff; }
+    :root {
+      --bg: #14140f;
+      --surface: #1c1c18;
+      --border: #2e2e28;
+      --text: #ecebe6;
+      --muted: #a3a099;
+      --faint: #78756e;
+      --accent: #7fc0ac;
+      --badge-bg: #26261f;
+    }
   }
-  main { max-width: 34rem; padding: 2rem; line-height: 1.7; }
-  h1 { font-size: 1.4rem; margin: 0 0 .75rem; }
-  p { margin: 0 0 1rem; }
-  small { opacity: .6; }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+                 "Pretendard", "Malgun Gothic", "Noto Sans KR", "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem 3rem;
+  }
+
+  /* ---- header ---- */
+  header { margin-bottom: 3.5rem; }
+
+  .brand {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.6rem;
+  }
+
+  .en {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ---- app cards ---- */
+  .apps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .app {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.6rem 1.5rem;
+  }
+
+  .app-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .app h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  .badge {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--faint);
+    background: var(--badge-bg);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    white-space: nowrap;
+  }
+
+  .lead {
+    margin: 0 0 0.35rem;
+    font-weight: 500;
+  }
+
+  .lead-en {
+    margin: 0 0 1rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .app p.body { margin: 0 0 0.35rem; }
+
+  .app p.body-en {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  /* ---- footer ---- */
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--faint);
+  }
+
+  footer p { margin: 0 0 0.5rem; }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+  a:hover { border-bottom-color: currentColor; }
+
+  .sep { color: var(--border); margin: 0 0.4rem; }
+
+  @media (max-width: 480px) {
+    .wrap { padding-top: 3rem; }
+    h1 { font-size: 1.3rem; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <h1>앱 안내 페이지</h1>
-  <p>이 사이트는 Google Play에 게시된 앱의 개발자 웹사이트입니다.</p>
-  <p>문의: <a href="mailto:여기에@이메일.주소">여기에@이메일.주소</a></p>
-  <p><small>Authorized Sellers: <a href="/app-ads.txt">app-ads.txt</a></small></p>
-</main>
+<div class="wrap">
+
+  <header>
+    <p class="brand">NJHouse</p>
+    <h1>필요한 일만 하는 Android 앱을 만듭니다.<br>계정을 요구하지 않고, 처리는 기기 안에서 끝냅니다.</h1>
+    <p class="en">We build small Android apps that do one thing. No accounts, and the work stays on your device.</p>
+  </header>
+
+  <main class="apps">
+
+    <section class="app">
+      <div class="app-head">
+        <h2>Damda</h2>
+        <span class="badge">공개 준비 중 · Coming soon</span>
+      </div>
+      <p class="lead">X(트위터) 링크를 붙여넣으면 갤러리에 저장돼요.</p>
+      <p class="lead-en">Paste an X (Twitter) link, and it saves to your gallery.</p>
+      <p class="body">워터마크 없이, 원본이 제공하는 화질 그대로 저장합니다. 화질을 직접 고를 수 있고, 한 게시물에 영상이 여러 개면 원하는 것만 골라 한 번에 받습니다. 로그인이 필요 없습니다.</p>
+      <p class="body-en">Saves without a watermark, at the quality the source provides. You pick the quality, and when a post holds several videos you choose the ones you want. No sign-in.</p>
+    </section>
+
+    <section class="app">
+      <div class="app-head">
+        <h2>Dadeum</h2>
+        <span class="badge">공개 준비 중 · Coming soon</span>
+      </div>
+      <p class="lead">영상을 다듬고 내보냅니다.</p>
+      <p class="lead-en">Trim your video, then export it.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      개인정보처리방침 · Privacy Policy —
+      <a href="https://sites.google.com/view/njhouse/privacy/damda">Damda</a><span class="sep">·</span><a href="https://sites.google.com/view/njhouse/privacy/njhfilter">NJHFilter</a>
+    </p>
+    <p><a href="/app-ads.txt">app-ads.txt</a></p>
+  </footer>
+
+</div>
 </body>
 </html>
