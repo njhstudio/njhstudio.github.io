@@ -116,6 +116,21 @@
     white-space: nowrap;
   }
 
+  /* 출시된 앱. 배지가 아니라 **누를 수 있는 링크**다 — 사람들이 가장 먼저
+     찾는 것이 스토어 링크라서, 눈에 띄되 제목을 가리지 않게 둔다. */
+  .badge-live {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: transparent;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--accent);
+  }
+  .badge-live:hover { background: var(--accent); color: var(--bg); }
+
   .lead {
     margin: 0 0 0.35rem;
     font-weight: 500;
@@ -136,6 +151,29 @@
     line-height: 1.65;
   }
 
+  /* ---- about ---- */
+  .about {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .about h2 {
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.9rem;
+  }
+
+  .about p {
+    margin: 0 0 0.9rem;
+    color: var(--muted);
+  }
+
+  .about .en {
+    color: var(--faint);
+    font-size: 0.92rem;
+  }
+
   /* ---- footer ---- */
   footer {
     margin-top: 3.5rem;
@@ -146,6 +184,19 @@
   }
 
   footer p { margin: 0 0 0.5rem; }
+
+  /* 사업자 정보는 한 줄로 길어지므로 조금 더 작게, 줄바꿈을 허용한다. */
+  footer .biz {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  footer .copy {
+    margin-top: 0.9rem;
+    /* `--border` 로 두면 거의 안 보인다 — 저작권 줄은 읽혀야 한다. */
+    color: var(--faint);
+    font-size: 0.8rem;
+  }
 
   a {
     color: var(--accent);
@@ -177,11 +228,12 @@
     <section class="app">
       <div class="app-head">
         <h2>Damda</h2>
-        <span class="badge">공개 준비 중 · Coming soon</span>
+        <a class="badge-live"
+           href="https://play.google.com/store/apps/details?id=kr.njhouse.download">Google Play &rarr;</a>
       </div>
       <p class="lead">X(트위터) 링크를 붙여넣으면 갤러리에 저장돼요.</p>
       <p class="lead-en">Paste an X (Twitter) link, and it saves to your gallery.</p>
-      <p class="body">워터마크 없이, 원본이 제공하는 화질 그대로 저장합니다. 화질을 직접 고를 수 있고, 한 게시물에 영상이 여러 개면 원하는 것만 골라 한 번에 받습니다. 로그인이 필요 없습니다.</p>
+      <p class="body">원본이 제공하는 화질 그대로 저장합니다. 화질을 직접 고를 수 있고, 한 게시물에 영상이 여러 개면 원하는 것만 골라 한 번에 받습니다. 로그인이 필요 없습니다.</p>
       <p class="body-en">Saves without a watermark, at the quality the source provides. You pick the quality, and when a post holds several videos you choose the ones you want. No sign-in.</p>
     </section>
 
@@ -209,11 +261,28 @@
 
   </main>
 
+  <section class="about">
+    <h2>NJHouse</h2>
+    <p>필요한 일만 하는 Android 앱을 만드는 1인 개발 스튜디오입니다. 큰 앱을 작게 쪼개는 대신, <strong>하나의 일을 끝까지 하는 앱</strong>을 만듭니다.</p>
+    <p>세 가지를 지킵니다. <strong>계정을 요구하지 않습니다</strong> — 이름도, 이메일도 받지 않습니다. <strong>처리는 기기 안에서 끝냅니다</strong> — 우리는 서버를 두지 않고, 그래서 이용자의 파일과 기록을 볼 방법이 없습니다. <strong>기능을 잠그지 않습니다</strong> — &ldquo;프리미엄&rdquo; 자물쇠 대신 광고로 운영하고, 광고는 손이 가는 자리에는 넣지 않습니다.</p>
+    <p>앱을 오래 쓰게 만드는 것은 기능의 수가 아니라 <strong>매일 쓸 때의 마찰</strong>이라고 봅니다. 그래서 기능을 더하기 전에 단계를 줄이는 쪽을 먼저 봅니다.</p>
+    <p class="en">NJHouse is a one-person studio building small Android apps that do one thing. No accounts — we ask for neither your name nor your email. The work stays on your device: we run no servers, so we have no way to see your files or records. Nothing sits behind a &ldquo;premium&rdquo; lock; ads fund the apps, and never in the places your hands need.</p>
+    <p class="en">What keeps an app in use is not the number of features but the friction of using it every day. So before adding a feature, we look for a step to remove.</p>
+  </section>
+
   <footer>
     <p>
       개인정보처리방침 · Privacy Policy —
       <a href="https://sites.google.com/view/njhouse/privacy/damda">Damda</a><span class="sep">·</span><a href="privacy/dadeum.html">Dadeum</a><span class="sep">·</span><a href="https://sites.google.com/view/njhouse/privacy/njhfilter">NJHFilter</a><span class="sep">·</span><a href="privacy/hearim.html">Hearim</a>
     </p>
+    <p class="biz">
+      24 Jeonnong-ro, Dongdaemun-gu, Seoul 02621, Republic of Korea<span class="sep">·</span>Business Registration No. 159-11-02679<span class="sep">·</span>Representative: Junsang Shin
+    </p>
+    <p class="biz">
+      앱 문의 · App support — <a href="mailto:njhstudio26@gmail.com">njhstudio26@gmail.com</a><br>
+      회사 문의 · Business inquiries — <a href="mailto:njhousemall@gmail.com">njhousemall@gmail.com</a>
+    </p>
+    <p class="copy">&copy; 2026 NJHouse. All rights reserved.</p>
   </footer>
 
 </div>
