@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Nanal · 개인정보 처리방침</title>
+<link rel="canonical" href="https://njhstudio.github.io/privacy/nanal.html">
+<!--
+  게시 위치: https://njhstudio.github.io/privacy/nanal.html
+  원본은 NJHDiary 저장소의 docs/privacy/nanal.html 이다. **여기를 고치고 복사한다** —
+  게시본만 고치면 다음에 저장소에서 복사할 때 조용히 되돌아간다.
+  파일명이 nanal.html 인 이유는 njhstudio.github.io 가 여러 앱을 담는 사이트라
+  privacy/index.html 자리를 한 앱이 차지할 수 없기 때문이다.
+
+  **영문이 먼저다.** 문서 언어를 en 으로 두고 한국어 절만 section lang="ko" 로 감싼다 —
+  순서만 바꾸고 lang 을 그대로 두면 한국어 본문이 영어로 표시돼 화면 낭독기와 번역이
+  어긋난다.
+
+  ⚠️ Nanal 은 형제 앱들과 다른 점이 하나 있다. **구글 드라이브 백업**을 쓰면
+  일기가 사용자 본인의 구글 계정으로 올라간다. "기기 밖으로 나가지 않는다"를
+  그대로 복사해 오면 거짓이 된다. 6항이 그 부분이다.
+  근거: NJHDiary 저장소의 docs/adr/0008-google-drive-backup.md
+-->
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 5rem;
+    font: 16px/1.75 -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+    word-break: keep-all;
+  }
+  h1 { font-size: 1.6rem; margin-top: 2.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .93rem; }
+  th, td { border: 1px solid #8886; padding: .5rem .6rem; text-align: left; vertical-align: top; }
+  th { background: #8881; }
+  .lead { padding: .9rem 1.1rem; border-left: 3px solid #B7C1E4; background: #b7c1e422; }
+  hr { margin: 3.5rem 0; border: 0; border-top: 1px solid #8886; }
+  .date { opacity: .7; font-size: .9rem; }
+  .wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<section lang="en">
+
+<h1>Privacy Policy — Nanal</h1>
+<p class="date">Effective: 2026-08-30</p>
+
+<h2>1. Summary</h2>
+<div class="lead">
+<ul>
+  <li><strong>No account, no sign-in</strong> is needed to use the app. We create no identifier for you.</li>
+  <li><strong>We operate no server.</strong> Your diary never reaches us, and we cannot read it.</li>
+  <li><strong>Your photos and writing stay on your device</strong> — unless you choose to use Google Drive backup, which uploads them to <strong>your own</strong> Google account. See section 6.</li>
+  <li>The app <strong>asks for no photo permission.</strong> It receives only the single photo you pick in Android&rsquo;s own photo picker. See section 4.</li>
+  <li>The app <strong>displays ads through Google AdMob</strong>, and Google may collect certain information to serve them. See section 5.</li>
+</ul>
+</div>
+
+<h2>2. Permissions</h2>
+<div class="wrap">
+<table>
+<tr><th>Permission</th><th>Purpose</th><th>Leaves device?</th></tr>
+<tr><td>Notifications</td><td>The optional daily writing reminder</td><td>N/A — scheduled and shown on the device</td></tr>
+<tr><td>Biometrics / fingerprint</td><td>To unlock the app, if you turn the lock on</td><td><strong>No</strong> — handled by Android; the app never sees your fingerprint</td></tr>
+<tr><td>Internet</td><td>Loading ads, and Google Drive backup if you use it</td><td>See sections 5 and 6</td></tr>
+<tr><td>Advertising ID</td><td>Used by Google AdMob to serve ads</td><td><strong>Yes</strong> — see section 5</td></tr>
+</table>
+</div>
+<p><strong>There is no photo or storage permission in this app.</strong> That is deliberate — see section 4.</p>
+<p>Permissions are requested only when the related feature is used. Declining one disables only that feature; writing a diary works without any of them.</p>
+
+<h2>3. Data stored on your device</h2>
+<div class="wrap">
+<table>
+<tr><th>What</th><th>Detail</th></tr>
+<tr><td>Diary photos</td><td>A copy of the photo you picked, plus a small thumbnail for the calendar grid</td></tr>
+<tr><td>Diary text</td><td>The one-line caption and the optional longer note</td></tr>
+<tr><td>Dates</td><td>Which day each entry belongs to</td></tr>
+<tr><td>Settings</td><td>Theme colour, first day of week, reminder time, and so on</td></tr>
+<tr><td>Lock passcode</td><td>Stored only as a <strong>cryptographic hash</strong>, never as the number you typed</td></tr>
+<tr><td>Connected Google account</td><td>Only if you use Drive backup. The address is kept to show you which account is connected, and is sent nowhere</td></tr>
+</table>
+</div>
+<p>All of this is removed when you uninstall the app. <strong>We cannot recover it for you</strong>, so please use the app&rsquo;s backup feature before changing phones.</p>
+<p>Deleted entries stay in <strong>Settings → Recently deleted</strong> for 30 days, together with their photos, so you can restore them. After 30 days both are removed permanently.</p>
+
+<h2>4. How the app gets your photos</h2>
+<p><strong>The app does not request permission to your photo library.</strong></p>
+<p>When you add a photo, Android&rsquo;s own photo picker opens, and the app receives <strong>only the one photo you selected there</strong>. It cannot browse, read or count anything else in your gallery.</p>
+<p>The selected photo is copied into the app&rsquo;s private folder, so deleting the original from your gallery does not remove it from your diary. Conversely, deleting a diary entry removes that copy.</p>
+
+<h2>5. Advertising — Google AdMob</h2>
+<p>The app is free and is funded by Google AdMob.</p>
+<p>In serving ads, Google and its partners may collect your <strong>advertising ID, device information, approximate location (from IP address), and app usage information</strong>. This is collected by <strong>Google, not by us</strong>; the developer has no access to it.</p>
+<ul>
+  <li>Google&rsquo;s policy: <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></li>
+  <li>You can <strong>reset or delete your advertising ID</strong> at any time in your device settings.</li>
+</ul>
+<p><strong>EEA / UK users:</strong> consent is requested via Google&rsquo;s UMP before any personalized ad request. You can change your choice at any time in the app&rsquo;s settings.</p>
+<p><strong>Your diary content is never used for advertising</strong> and is never passed to the ad provider.</p>
+<p><strong>No ads appear while you write or read an entry.</strong> A single banner sits at the bottom of the calendar screen; the writing and detail screens contain no ad at all.</p>
+
+<h2>6. Google Drive backup (optional)</h2>
+<p>This is the one feature that sends your diary off the device. <strong>It is off until you turn it on, and it never runs by itself.</strong></p>
+<ul>
+  <li><strong>Upload happens only when you tap it.</strong> There is no automatic or background sync.</li>
+  <li>The backup file goes to <strong>your own Google Drive</strong>, not to us. <strong>The developer has no server and no access to it.</strong></li>
+  <li>The app requests only the <strong><code>drive.file</code></strong> scope. This grants access to <strong>files this app itself created</strong> — it cannot read, change or even see any other file in your Drive.</li>
+  <li>Uploaded backups are visible in your Drive and you can delete them yourself at any time.</li>
+  <li>The app keeps the <strong>5 most recent</strong> backups and removes older ones so your Drive does not fill up.</li>
+  <li>Disconnecting stops any further upload. Files already uploaded remain in your Drive; delete them yourself if you no longer want them.</li>
+</ul>
+<p>While connected, Google provides the app with your account&rsquo;s email address. It is used <strong>only to show you which account is connected</strong> and is transmitted nowhere.</p>
+<p>A backup file contains your photos and writing as they are, and <strong>is not encrypted.</strong> Please do not share it with others.</p>
+
+<h2>7. Children</h2>
+<p>The app is not directed at children under 14 and does not knowingly collect their personal information.</p>
+
+<h2>8. Sharing with third parties</h2>
+<p>We collect no personal information, so there is nothing for us to share. Ad-related processing follows Google&rsquo;s policy referenced in section 5. Drive backup goes to your own account as described in section 6.</p>
+
+<h2>9. Your rights</h2>
+<p>Because we hold no information identifying you, there is no separate access or deletion request process.</p>
+<ul>
+  <li>Entries can be edited or deleted in the app at any time.</li>
+  <li>Uninstalling removes everything stored on the device.</li>
+  <li>Backups in your Drive are yours to delete.</li>
+  <li>Your advertising ID can be reset in <strong>device Settings → Privacy → Ads</strong>.</li>
+</ul>
+
+<h2>10. Changes</h2>
+<p>Changes will be announced through app updates and this page. Any change that <strong>adds a collected data category</strong> will be announced before it takes effect.</p>
+
+<h2>11. Contact</h2>
+<p><strong>Email: <a href="mailto:njhstudio26@gmail.com">njhstudio26@gmail.com</a></strong></p>
+
+</section>
+
+<hr>
+
+<section lang="ko">
+
+<h1>개인정보 처리방침 — Nanal</h1>
+<p class="date">시행일: 2026-08-30</p>
+
+<p>Nanal(이하 &ldquo;본 앱&rdquo;)은 이용자의 개인정보를 소중히 여기며, 아래와 같이 처리 방침을 알려 드립니다.</p>
+
+<h2>1. 요약</h2>
+<div class="lead">
+<ul>
+  <li><strong>본 앱은 회원가입&middot;로그인 없이 쓸 수 있습니다.</strong> 이용자를 식별하는 계정을 만들지 않습니다.</li>
+  <li><strong>본 앱에는 개발자 서버가 없습니다.</strong> 이용자의 일기는 개발자에게 전달되지 않으며, 개발자는 그 내용을 볼 수 없습니다.</li>
+  <li><strong>사진과 글은 기기 안에 저장됩니다.</strong> 다만 이용자가 <strong>구글 드라이브 백업</strong>을 직접 사용하면 <strong>이용자 본인의</strong> 구글 계정으로 올라갑니다. 6항을 참고하십시오.</li>
+  <li><strong>본 앱은 사진 접근 권한을 요청하지 않습니다.</strong> 안드로이드 사진 선택 도구에서 이용자가 고른 한 장만 받습니다. 4항을 참고하십시오.</li>
+  <li>본 앱은 <strong>광고(Google AdMob)를 표시</strong>하며, 광고 제공을 위해 Google이 일부 정보를 수집할 수 있습니다. 5항을 참고하십시오.</li>
+</ul>
+</div>
+
+<h2>2. 본 앱이 사용하는 권한과 그 이유</h2>
+<div class="wrap">
+<table>
+<tr><th>권한</th><th>왜 필요한가</th><th>정보가 나가는가</th></tr>
+<tr><td>알림</td><td>매일 정해진 시각의 기록 알림(선택 기능)</td><td>해당 없음 — 기기 안에서 예약되고 표시됩니다</td></tr>
+<tr><td>생체인증&middot;지문</td><td>앱 잠금을 켠 경우 잠금 해제</td><td><strong>아니요.</strong> 안드로이드가 처리하며 본 앱은 지문 정보를 보지 않습니다</td></tr>
+<tr><td>인터넷</td><td>광고 로드, 그리고 이용자가 쓸 경우 드라이브 백업</td><td>5항&middot;6항 참고</td></tr>
+<tr><td>광고 ID</td><td>광고 표시를 위해 Google AdMob이 사용</td><td><strong>예.</strong> 5항 참고</td></tr>
+</table>
+</div>
+<p><strong>본 앱에는 사진&middot;저장소 권한이 없습니다.</strong> 의도한 설계이며 4항에서 설명합니다.</p>
+<p>권한은 <strong>필요한 시점에만</strong> 요청하며, 거부해도 해당 기능만 꺼질 뿐 일기 작성은 그대로 됩니다.</p>
+
+<h2>3. 기기에 저장되는 정보</h2>
+<div class="wrap">
+<table>
+<tr><th>항목</th><th>설명</th></tr>
+<tr><td>일기 사진</td><td>이용자가 고른 사진의 사본과, 달력에 쓰는 작은 축소본</td></tr>
+<tr><td>일기 글</td><td>한 줄 메모와 선택 사항인 본문</td></tr>
+<tr><td>날짜</td><td>각 기록이 어느 날의 것인지</td></tr>
+<tr><td>앱 설정</td><td>테마 색상, 시작 요일, 알림 시각 등</td></tr>
+<tr><td>잠금 비밀번호</td><td>입력한 숫자가 아니라 <strong>암호학적 해시</strong>로만 저장</td></tr>
+<tr><td>연결된 구글 계정</td><td>드라이브 백업을 쓸 때만. 어느 계정에 연결됐는지 화면에 보여주는 용도로만 보관하며 어디에도 전송하지 않습니다</td></tr>
+</table>
+</div>
+<p>앱을 삭제하면 위 정보는 함께 삭제됩니다. <strong>개발자가 복구해 드릴 수 없으므로</strong> 기기를 바꾸기 전에 앱 안의 백업 기능을 이용해 주십시오.</p>
+<p>삭제한 기록은 <strong>설정 &rarr; 최근 삭제</strong>에 사진과 함께 30일간 남아 되살릴 수 있습니다. 30일이 지나면 사진까지 완전히 사라집니다.</p>
+
+<h2>4. 본 앱이 사진을 받는 방식</h2>
+<p><strong>본 앱은 사진 접근 권한을 요청하지 않습니다.</strong></p>
+<p>사진을 추가할 때 안드로이드 시스템의 사진 선택 도구가 열리며, 본 앱은 <strong>그 자리에서 이용자가 고른 한 장만</strong> 받습니다. 갤러리의 다른 사진을 열람하거나 읽거나 개수를 세는 것이 불가능합니다.</p>
+<p>선택한 사진은 앱 전용 폴더로 복사되므로, 갤러리에서 원본을 지워도 일기의 사진은 남습니다. 반대로 앱에서 일기를 지우면 그 사본도 함께 삭제됩니다.</p>
+
+<h2>5. 광고 — Google AdMob</h2>
+<p>본 앱은 무료로 제공되며, 운영 비용은 Google AdMob 광고로 충당합니다.</p>
+<p>광고 제공 과정에서 Google 및 그 파트너는 <strong>광고 ID, 기기 정보, 대략적인 위치(IP 주소 기반), 앱 사용 정보</strong> 등을 수집&middot;이용할 수 있습니다. 이는 본 앱이 아니라 <strong>Google이 수집</strong>하는 것이며, 본 앱 개발자는 해당 정보에 접근하지 않습니다.</p>
+<ul>
+  <li>Google 광고 정책: <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></li>
+  <li>광고 ID는 <strong>기기 설정에서 언제든 재설정하거나 삭제</strong>할 수 있습니다.</li>
+</ul>
+<p><strong>유럽 경제 지역(EEA)&middot;영국 이용자:</strong> 맞춤 광고 요청 전에 Google UMP를 통해 동의를 받습니다. 동의 여부는 앱 설정에서 언제든 다시 바꿀 수 있습니다.</p>
+<p><strong>일기 내용은 광고에 이용되지 않으며</strong> 광고 사업자에게 전달되지 않습니다.</p>
+<p><strong>일기를 쓰거나 읽는 동안에는 광고가 나오지 않습니다.</strong> 달력 화면 하단에 배너 하나가 있을 뿐, 작성 화면과 상세 화면에는 광고가 아예 없습니다.</p>
+
+<h2>6. 구글 드라이브 백업 (선택 기능)</h2>
+<p>일기가 기기 밖으로 나가는 유일한 기능입니다. <strong>이용자가 켜기 전에는 동작하지 않으며, 저절로 실행되지 않습니다.</strong></p>
+<ul>
+  <li><strong>이용자가 누를 때만 올라갑니다.</strong> 자동 업로드나 배경 동기화가 없습니다.</li>
+  <li>백업 파일은 개발자가 아니라 <strong>이용자 본인의 구글 드라이브</strong>로 갑니다. <strong>개발자에게는 서버도 접근 권한도 없습니다.</strong></li>
+  <li>본 앱은 <strong><code>drive.file</code></strong> 권한만 요청합니다. 이는 <strong>이 앱이 만든 파일</strong>에만 접근할 수 있는 권한으로, 드라이브의 다른 파일은 읽거나 고치기는커녕 볼 수도 없습니다.</li>
+  <li>올라간 백업은 이용자의 드라이브에 그대로 보이며 언제든 직접 지울 수 있습니다.</li>
+  <li>드라이브가 가득 차지 않도록 <strong>최근 5개</strong>만 남기고 오래된 백업은 자동으로 정리합니다.</li>
+  <li>연결을 끊으면 더 이상 업로드되지 않습니다. 이미 올라간 파일은 드라이브에 남으므로 필요 없으면 직접 삭제해 주십시오.</li>
+</ul>
+<p>연결된 동안 Google은 이용자 계정의 이메일 주소를 본 앱에 제공합니다. 이는 <strong>어느 계정에 연결됐는지 보여주는 용도로만</strong> 쓰이며 어디에도 전송되지 않습니다.</p>
+<p>백업 파일에는 사진과 글이 그대로 들어 있고 <strong>암호화되어 있지 않습니다.</strong> 다른 사람과 공유하지 않도록 주의해 주십시오.</p>
+
+<h2>7. 만 14세 미만 아동</h2>
+<p>본 앱은 아동을 대상으로 하지 않으며, 아동으로부터 개인정보를 의도적으로 수집하지 않습니다.</p>
+
+<h2>8. 제3자 제공</h2>
+<p>본 앱은 개인정보를 수집하지 않으므로 제3자에게 제공할 정보가 없습니다. 광고 관련 처리는 5항의 Google 정책을 따르며, 드라이브 백업은 6항과 같이 이용자 본인의 계정으로 갑니다.</p>
+
+<h2>9. 이용자의 권리</h2>
+<p>본 앱은 이용자를 식별하는 정보를 보유하지 않으므로 별도의 열람&middot;삭제 요청 절차가 없습니다.</p>
+<ul>
+  <li>일기는 앱 안에서 언제든 수정&middot;삭제할 수 있습니다.</li>
+  <li>앱을 삭제하면 기기에 저장된 모든 정보가 삭제됩니다.</li>
+  <li>드라이브에 올린 백업은 이용자가 직접 삭제할 수 있습니다.</li>
+  <li>광고 ID는 <strong>기기 설정 &rarr; 개인정보 보호 &rarr; 광고</strong>에서 재설정할 수 있습니다.</li>
+</ul>
+
+<h2>10. 변경 고지</h2>
+<p>이 처리방침이 바뀌면 앱 업데이트와 이 페이지를 통해 알려 드립니다. <strong>수집 항목이 늘어나는 변경</strong>은 시행 전에 고지합니다.</p>
+
+<h2>11. 문의</h2>
+<p><strong>이메일: <a href="mailto:njhstudio26@gmail.com">njhstudio26@gmail.com</a></strong></p>
+
+</section>
+
+</body>
+</html>
