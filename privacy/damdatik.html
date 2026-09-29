@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — DamdaTik · 개인정보처리방침</title>
+<link rel="canonical" href="https://njhstudio.github.io/privacy/damdatik">
+<!--
+  게시 위치: https://njhstudio.github.io/privacy/damdatik.html (확장자 없는 /privacy/damdatik 로도 열린다 — 앱·스토어에는 이 주소를 쓴다, ADR-052)
+  원본은 NJHTiktok 저장소의 docs/privacy/index.html 이다. **여기를 고치고 복사한다** —
+  게시본만 고치면 다음에 저장소에서 복사할 때 조용히 되돌아간다.
+  파일명이 damdatik.html 인 이유는 njhstudio.github.io 가 여러 앱을 담는 사이트라
+  privacy/index.html 자리를 한 앱이 차지할 수 없기 때문이다.
+
+  **영문이 먼저다.** 문서 언어를 en 으로 두고 한국어 절만 section lang="ko" 로 감싼다 —
+  순서만 바꾸고 lang 을 그대로 두면 한국어 본문이 영어로 표시돼 화면 낭독기와 번역이
+  어긋난다.
+-->
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 5rem;
+    font: 16px/1.75 -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+    word-break: keep-all;
+  }
+  h1 { font-size: 1.6rem; margin-top: 2.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .93rem; }
+  th, td { border: 1px solid #8886; padding: .5rem .6rem; text-align: left; vertical-align: top; }
+  th { background: #8881; }
+  .summary { padding: .9rem 1.1rem; border-left: 3px solid #00bfa5; background: #00bfa515; }
+  hr { margin: 3.5rem 0; border: 0; border-top: 1px solid #8886; }
+  .meta { opacity: .7; font-size: .9rem; }
+  code { background: #8882; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  footer { margin-top: 3.5rem; font-size: .9rem; opacity: .8; }
+  .wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<section lang="en">
+
+<h1>DamdaTik Privacy Policy</h1>
+<p class="meta">Effective: September 27, 2026 · Last updated: September 27, 2026 (precise vs. approximate location clarified; ad SDK data listed) · First published: September 24, 2026</p>
+
+<div class="summary">
+  <strong>In one line — we keep nothing about you, because we have no server.
+  But the Google AdMob SDK built into this app does collect device data, such as your advertising ID, and sends it to Google.</strong><br>
+  This app (DamdaTik, Android package <code>kr.njhouse.damdatik</code>) has no accounts, no sign-in, and no server of our own. Your download history and settings live only on your device.
+  Two things do leave: <strong>the link you paste is sent to an external lookup service</strong>, and
+  <strong>the ad SDK sends data such as your advertising ID and IP address to Google</strong>. Both are explained in sections 4 and 5.
+</div>
+
+<h2>1. What we do not collect</h2>
+<p>This app does not ask for, collect, or store the following — and the ad SDK doesn't get it from the app either. (What the ad SDK does collect — device identifiers, IP address, approximate location, and more — is listed separately in section 5.)</p>
+<ul>
+  <li>Name, email, phone number, date of birth, or other personal details</li>
+  <li>Accounts or sign-in credentials — there is no registration</li>
+  <li>Contacts, call logs, or messages</li>
+  <li><strong>Precise (GPS) location</strong> — the app never requests location permission. The ad SDK may, however, estimate your <strong>approximate location</strong> from your IP address (section 5).</li>
+  <li>Camera or microphone data</li>
+</ul>
+<p>We also run <strong>no server of our own</strong>. There is simply no path by which your activity could reach us.</p>
+
+<h2>2. Permissions</h2>
+<div class="wrap">
+<table>
+  <tr><th>Permission</th><th>Why</th><th>Scope</th></tr>
+  <tr><td><code>INTERNET</code></td><td>To look up video information and download files. Nothing in the app works without it.</td><td>All versions</td></tr>
+  <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>To stop and explain when the connection drops.</td><td>All versions</td></tr>
+  <tr><td><code>WRITE_EXTERNAL_STORAGE</code></td><td>To save downloads to your gallery.</td><td><strong>Requested on Android 9 and below only.</strong> Declared but never requested on Android 10; not declared at all on Android 11+.</td></tr>
+  <tr><td><code>WAKE_LOCK</code> · <code>FOREGROUND_SERVICE</code></td><td>Declared by the download library (Android WorkManager) to keep downloads from being interrupted. Released as soon as downloads finish.</td><td>While downloading only</td></tr>
+  <tr><td><code>AD_ID</code> · <code>ACCESS_ADSERVICES_*</code></td><td>Used by the Google AdMob SDK. See section 5.</td><td>Advertising</td></tr>
+</table>
+</div>
+<p><strong>We do not request photo or video read permission.</strong> The app only needs the files it saved itself, so your other media stays out of reach.</p>
+
+<h3>About the clipboard</h3>
+<p>When you open the app, we check the clipboard for a link you copied, so you don't have to paste it yourself.</p>
+<ul>
+  <li>Read <strong>only while the app is on screen</strong> — never in the background.</li>
+  <li>What is read <strong>never leaves your device</strong> and is not stored.</li>
+  <li>Finding a link <strong>never starts a download by itself.</strong> We only suggest; you decide.</li>
+  <li>You can always paste manually instead. Manual entry is never disabled.</li>
+</ul>
+
+<h2>3. What is stored on your device</h2>
+<p>The following stays <strong>on your device only</strong>. It is not uploaded to Android Auto Backup (Google Drive), and it is removed when you uninstall the app.</p>
+<div class="wrap">
+<table>
+  <tr><th>Stored</th><th>Why</th><th>Where</th></tr>
+  <tr><td>Download history (video ID, original link, author, description, preview URL, chosen quality, file path, timestamp)</td><td>To show your library and to avoid downloading the same video twice.</td><td>App database</td></tr>
+  <tr><td>Batch links not yet downloaded (original link, author)</td><td>If the app closes while downloading several links at once, to offer to resume next time. Removed once they're downloaded or you discard the list. Never downloaded again automatically.</td><td>App database</td></tr>
+  <tr><td>Settings (quality policy, filename rule, ad consent state)</td><td>To keep your preferences between sessions.</td><td>App database</td></tr>
+  <tr><td>Downloaded video / photo / audio files</td><td>They are what you asked the app to save.</td><td>Device gallery</td></tr>
+</table>
+</div>
+<p>History can be cleared all at once in the app's Settings under <strong>[Clear download history]</strong>, or item by item in your library. Clearing history doesn't delete files saved to your gallery. Saved files remain after uninstalling and can be deleted from your gallery app.</p>
+<p>If some files couldn't be added to your gallery and are kept only in the app, you'll be asked separately whether to delete them too. If you keep them, they stay and appear in your library by file name only.</p>
+
+<h2>4. Where your link goes</h2>
+<p>This is the most important section. Apart from advertising (section 5), <strong>exactly one piece of information leaves your device because of what the app does.</strong></p>
+<ul>
+  <li>The <strong>video link</strong> you paste or share is sent to a third-party service, <code>tikwm.com</code>, to obtain the video's address and available qualities.</li>
+  <li><strong>Only the link is sent.</strong> No device identifier, no advertising ID, no personal data accompanies it.
+      As with any internet request, that service can see your device's IP address.</li>
+  <li>The media file itself does not pass through that service — your device downloads it <strong>directly</strong> from the platform's delivery servers.</li>
+  <li>We keep no record of any of this. We have no server to keep it on.</li>
+</ul>
+<p>That service is operated by a third party, and its handling of data is governed by its own policy.
+If this path is not acceptable to you, the honest answer is that we cannot offer an alternative other than not using the app.</p>
+
+<h2>5. Advertising</h2>
+<p>This app is <strong>entirely free</strong>. There are no paid tiers, subscriptions, or in-app purchases. It is supported by Google AdMob ads only.</p>
+<p>The Google Mobile Ads SDK in this app <strong>collects the following and sends it to Google</strong> to show ads, measure them, and prevent fraud (encrypted in transit).
+We, the developer, neither receive nor can see this data.</p>
+<ul>
+  <li><strong>Device identifiers</strong> — advertising ID, app set ID, and similar</li>
+  <li><strong>IP address and approximate location</strong> — your approximate location estimated from the IP address (not precise location)</li>
+  <li><strong>Interactions</strong> — app launches, ad views and taps</li>
+  <li><strong>Diagnostics</strong> — performance information about the app and the ad SDK</li>
+</ul>
+<ul>
+  <li>The ad SDK may use your device's <strong>advertising ID</strong> to select ads and limit repetition.</li>
+  <li>You can <strong>reset or opt out of</strong> the advertising ID in Android Settings → Privacy → Ads.</li>
+  <li>In the EEA, UK, and similar regions, a <strong>consent dialog</strong> is shown. You can change your choice any time in the app's settings.</li>
+  <li><strong>Declining consent does not disable any feature.</strong> Nothing in this app is locked behind watching ads.</li>
+  <li>Downloads work normally even when no ad can be shown at all, such as in airplane mode.</li>
+</ul>
+<p>See <a href="https://policies.google.com/technologies/partner-sites">Google's partner sites policy</a> for how Google handles data.</p>
+
+<h2>6. Copyright and your responsibility</h2>
+<p>This app is provided for saving <strong>content you own or are allowed to save</strong>.</p>
+<ul>
+  <li>Copyright in downloaded content belongs to <strong>the original poster</strong>.</li>
+  <li>This app <strong>does not redistribute or host</strong> anything. Files stay on your device.</li>
+  <li>Downloading content you do not have the right to use, or redistributing it, is your responsibility.</li>
+  <li>Platform-applied marks may be absent, but <strong>marks a creator burned into the video itself cannot be removed.</strong></li>
+</ul>
+<p>If you believe content saved with this app infringes your rights, contact us at the address below and we will look into it.</p>
+
+<h2>7. Children</h2>
+<p>This app is not directed at children and does not knowingly collect children's personal information. We, the developer, keep no personal information from anyone; the ad SDK's data collection is described in section 5. We do not recommend use by children under 14 without a parent or guardian's consent.</p>
+
+<h2>8. Third parties</h2>
+<p><strong>We hold no user information and hand none over</strong>, because we have none. The ad SDK inside the app sends the data in section 5 <strong>directly to Google</strong>, and the link you enter goes to the service in section 4. The app communicates with only three external parties:</p>
+<div class="wrap">
+<table>
+  <tr><th>Party</th><th>What is exchanged</th></tr>
+  <tr><td>Lookup service (<code>tikwm.com</code>)</td><td>The link you entered (see section 4)</td></tr>
+  <tr><td>Platform delivery servers</td><td>Download requests for the media file</td></tr>
+  <tr><td>Google AdMob</td><td>Advertising ID, IP address (approximate location), ad interactions, diagnostics (see section 5)</td></tr>
+</table>
+</div>
+
+<h2>9. Your rights</h2>
+<ul>
+  <li><strong>Clear history</strong> — all at once in Settings under [Clear download history], or item by item in your library. Gallery files stay.</li>
+  <li><strong>Delete files</strong> — in your gallery app.</li>
+  <li><strong>Change ad consent</strong> — in the app's settings.</li>
+  <li><strong>Reset advertising ID</strong> — in Android system settings.</li>
+  <li><strong>Remove everything</strong> — uninstalling the app removes everything it stored.</li>
+</ul>
+<p>Because we hold no data about you, there is nothing to request access to, correct, or delete from us.</p>
+
+<h2>10. Changes</h2>
+<p>If this policy changes, the effective date above is updated. Significant changes are also announced inside the app.</p>
+
+<h2>11. Contact</h2>
+<p><strong>njhstudio26@gmail.com</strong></p>
+
+</section>
+
+<hr>
+
+<section lang="ko">
+
+<h1>DamdaTik 개인정보처리방침</h1>
+<p class="meta">효력 시작일: 2026년 9월 27일 · 최종 수정: 2026년 9월 27일 (위치 표현을 정밀 위치와 대략적 위치로 구분 · 광고 SDK 수집 항목 명시) · 최초 게시: 2026년 9월 24일</p>
+
+<div class="summary">
+  <strong>한 줄 요약 — 개발자는 이용자에 대해 아무것도 보관하지 않습니다. 서버가 없기 때문입니다.
+  다만 앱에 들어 있는 광고 SDK(Google AdMob)는 광고 ID 같은 기기 정보를 수집해 Google로 보냅니다.</strong><br>
+  이 앱(DamdaTik, Android 패키지 <code>kr.njhouse.damdatik</code>)은 계정도, 로그인도, 자체 서버도 없습니다. 저장한 영상 목록과 설정은 오직 이용자의 기기 안에만 있습니다.
+  기기 밖으로 나가는 것은 두 가지입니다 — <strong>영상 정보를 가져올 때 링크가 외부 서비스로 전달</strong>되고,
+  <strong>광고 SDK가 광고 ID·IP 주소 등을 Google로 보냅니다</strong>. 그 두 가지를 4항과 5항에서 먼저 밝힙니다.
+</div>
+
+<h2>1. 수집하지 않는 정보</h2>
+<p>이 앱은 다음을 <strong>요구하지도, 수집하지도, 저장하지도 않습니다</strong>. 광고 SDK도 아래 정보를 앱에서 얻지 않습니다. (광고 SDK가 수집하는 기기 식별자·IP 주소·대략적인 위치 등은 5항에 따로 밝힙니다.)</p>
+<ul>
+  <li>이름, 이메일, 전화번호, 생년월일 같은 개인 신상 정보</li>
+  <li>계정 · 로그인 정보 (회원가입 절차가 없습니다)</li>
+  <li>연락처, 통화 기록, 문자</li>
+  <li><strong>정밀 위치(GPS)</strong> — 위치 권한을 요청하지 않습니다. 다만 광고 SDK는 IP 주소로 기기의 <strong>대략적인 위치</strong>를 추정할 수 있습니다(5항).</li>
+  <li>카메라·마이크로 얻는 정보</li>
+</ul>
+<p>또한 개발자가 운영하는 <strong>서버가 없습니다.</strong> 이용자의 이용 기록이 개발자에게 전송되는 경로 자체가 존재하지 않습니다.</p>
+
+<h2>2. 앱이 사용하는 권한</h2>
+<div class="wrap">
+<table>
+  <tr><th>권한</th><th>왜 필요한가</th><th>범위</th></tr>
+  <tr>
+    <td>인터넷 접속<br><code>INTERNET</code></td>
+    <td>영상 정보를 조회하고 영상 파일을 내려받기 위해 필요합니다. 이 권한이 없으면 앱의 모든 기능이 동작하지 않습니다.</td>
+    <td>모든 버전</td>
+  </tr>
+  <tr>
+    <td>네트워크 상태 확인<br><code>ACCESS_NETWORK_STATE</code></td>
+    <td>연결이 끊겼을 때 다운로드를 중단하고 안내하기 위해 사용합니다.</td>
+    <td>모든 버전</td>
+  </tr>
+  <tr>
+    <td>저장소 쓰기<br><code>WRITE_EXTERNAL_STORAGE</code></td>
+    <td>내려받은 영상·사진·음원을 기기 갤러리에 저장하기 위해 필요합니다.</td>
+    <td><strong>Android 9 이하에서만</strong> 요청합니다. Android 10에서는 선언만 되어 있고 요청하지 않으며, Android 11 이상에서는 아예 선언하지 않습니다.</td>
+  </tr>
+  <tr>
+    <td>다운로드 작업 유지<br><code>WAKE_LOCK</code> · <code>FOREGROUND_SERVICE</code></td>
+    <td>다운로드 라이브러리(Android WorkManager)가 선언하는 권한으로, 받는 도중 작업이 중단되지 않도록 합니다. 다운로드가 끝나면 즉시 해제됩니다.</td>
+    <td>다운로드 진행 중에만</td>
+  </tr>
+  <tr>
+    <td>광고 ID<br><code>AD_ID</code> · <code>ACCESS_ADSERVICES_*</code></td>
+    <td>Google AdMob 광고 SDK가 사용합니다. 자세한 내용은 5항을 참고해 주세요.</td>
+    <td>광고 표시 목적</td>
+  </tr>
+</table>
+</div>
+<p><strong>사진·영상 읽기 권한은 요청하지 않습니다.</strong> 앱이 직접 저장한 파일만 다루면 되기 때문에, 기기의 다른 사진과 영상에는 접근하지 않습니다.</p>
+
+<h3>클립보드에 대하여</h3>
+<p>앱을 열었을 때 복사해 둔 링크가 있으면 붙여넣기를 대신해 드리기 위해 클립보드를 확인합니다.</p>
+<ul>
+  <li>앱이 <strong>화면에 떠 있을 때만</strong> 읽습니다. 백그라운드에서는 읽지 않습니다.</li>
+  <li>읽은 내용은 <strong>기기 밖으로 나가지 않으며 저장되지도 않습니다.</strong></li>
+  <li>링크를 발견해도 <strong>자동으로 내려받지 않습니다.</strong> 제안만 하고, 시작 여부는 이용자가 결정합니다.</li>
+  <li>이 기능을 쓰고 싶지 않으면 직접 붙여넣어도 됩니다. 수동 입력은 언제나 열려 있습니다.</li>
+</ul>
+
+<h2>3. 기기에 저장되는 정보</h2>
+<p>아래 정보는 <strong>이용자의 기기 안에만</strong> 저장되며 외부로 전송되지 않습니다. Android 자동 백업(Google 드라이브)에도 올리지 않습니다. 앱을 삭제하면 함께 사라집니다.</p>
+<div class="wrap">
+<table>
+  <tr><th>저장되는 것</th><th>왜</th><th>어디에</th></tr>
+  <tr>
+    <td>다운로드 기록 (영상 ID, 원본 링크, 작성자명, 설명, 미리보기 주소, 선택된 화질, 저장 경로, 저장 시각)</td>
+    <td>보관함에 목록을 보여 주고, 같은 영상을 두 번 받지 않기 위해 사용합니다.</td>
+    <td>앱 내부 데이터베이스</td>
+  </tr>
+  <tr>
+    <td>아직 받지 못한 일괄 다운로드 링크 (원본 링크, 작성자명)</td>
+    <td>여러 링크를 한 번에 받는 도중 앱이 종료되면, 다음에 열었을 때 이어 받기를 제안하기 위해 사용합니다. 다 받거나 목록을 지우면 사라집니다. 자동으로 다시 받지 않습니다.</td>
+    <td>앱 내부 데이터베이스</td>
+  </tr>
+  <tr>
+    <td>설정값 (기본 화질 정책, 파일명 규칙, 광고 동의 상태)</td>
+    <td>다음에 열었을 때 같은 설정을 유지하기 위해 사용합니다.</td>
+    <td>앱 내부 데이터베이스</td>
+  </tr>
+  <tr>
+    <td>내려받은 영상 · 사진 · 음원 파일</td>
+    <td>이용자가 저장을 요청한 결과물입니다.</td>
+    <td>기기 갤러리 (<code>Movies/</code>, <code>Pictures/</code>, <code>Music/</code>)</td>
+  </tr>
+</table>
+</div>
+<p>기록은 앱 설정의 <strong>[다운로드 기록 지우기]</strong>에서 한 번에, 보관함에서 항목별로 지울 수 있습니다. 기록을 지워도 갤러리에 저장된 파일은 지워지지 않습니다. 갤러리에 저장된 파일은 앱을 삭제해도 남으며, 갤러리 앱에서 직접 지울 수 있습니다.</p>
+<p>갤러리에 넣지 못해 앱 안에만 남아 있는 파일이 있으면, 기록을 지울 때 그 파일도 함께 지울지 따로 묻습니다. 지우지 않기로 하면 파일은 남고 보관함에 파일 이름만으로 표시됩니다.</p>
+
+<h2>4. 링크가 외부로 전달되는 지점</h2>
+<p>이 항목이 이 방침에서 가장 중요합니다. 광고(5항)를 제외하면, <strong>앱의 기능 때문에 기기 밖으로 나가는 정보는 딱 한 가지입니다.</strong></p>
+<ul>
+  <li>이용자가 입력하거나 공유한 <strong>영상 링크</strong>가, 영상의 주소와 화질 목록을 받아 오기 위해
+      제3자 서비스 <code>tikwm.com</code>으로 전달됩니다.</li>
+  <li>전달되는 것은 <strong>링크뿐</strong>입니다. 기기 식별자, 광고 ID, 이용자 정보는 함께 보내지 않습니다.
+      다만 모든 인터넷 요청이 그렇듯, 해당 서비스는 요청을 보낸 기기의 IP 주소를 볼 수 있습니다.</li>
+  <li>영상 파일 자체는 그 서비스를 거치지 않습니다. 기기가 영상 제공 서버에서 <strong>직접</strong> 내려받습니다.</li>
+  <li>개발자는 이 과정에서 어떤 기록도 보관하지 않습니다. 개발자에게는 서버가 없습니다.</li>
+</ul>
+<p>해당 서비스는 개발자가 운영하지 않는 외부 서비스이며, 그곳의 데이터 처리는 해당 서비스의 정책을 따릅니다.
+이 경로가 마음에 들지 않으신다면, 안타깝지만 앱을 사용하지 않는 것 외에 대안을 드리기 어렵습니다 — 정직하게 말씀드립니다.</p>
+
+<h2>5. 광고</h2>
+<p>이 앱은 <strong>완전 무료</strong>이며, 유료 결제·구독·인앱결제가 없습니다. 운영은 Google AdMob 광고로만 이루어집니다.</p>
+<p>앱에 포함된 Google Mobile Ads SDK는 광고 표시·광고 성과 측정·부정 행위 방지를 위해 다음 정보를 <strong>수집해 Google로 보냅니다</strong>(전송 구간은 암호화됩니다).
+개발자는 이 정보를 받지도, 볼 수도 없습니다.</p>
+<ul>
+  <li><strong>기기 식별자</strong> — 광고 ID, 앱 세트 ID 등</li>
+  <li><strong>IP 주소와 대략적인 위치</strong> — IP 주소로 추정한 기기의 대략적인 위치(정밀 위치는 아닙니다)</li>
+  <li><strong>광고와의 상호작용</strong> — 앱 실행, 광고 노출·탭 등</li>
+  <li><strong>진단 정보</strong> — 앱과 광고 SDK의 성능 정보</li>
+</ul>
+<ul>
+  <li>광고 SDK는 적절한 광고를 고르고 같은 광고가 반복되지 않도록 <strong>기기의 광고 ID</strong>를 사용할 수 있습니다.</li>
+  <li>광고 ID는 <strong>이용자가 직접 초기화하거나 사용을 중단</strong>할 수 있습니다.<br>
+      Android 설정 → 개인정보 보호 → 광고 (기기에 따라 경로가 다를 수 있습니다)</li>
+  <li>유럽경제지역(EEA)·영국 등에서는 광고 개인화에 대한 <strong>동의 창</strong>이 표시됩니다. 언제든 설정에서 다시 선택할 수 있습니다.</li>
+  <li><strong>동의를 거부해도 앱의 모든 기능이 그대로 동작합니다.</strong> 광고를 보지 않는다고 기능이 잠기지 않습니다.</li>
+  <li>광고가 하나도 표시되지 않는 상황(예: 비행기 모드)에서도 다운로드는 정상적으로 됩니다.</li>
+</ul>
+<p>Google의 데이터 처리에 대해서는
+<a href="https://policies.google.com/technologies/partner-sites">Google 파트너 사이트 정책</a>을 참고해 주세요.</p>
+
+<h2>6. 저작권과 이용자의 책임</h2>
+<p>이 앱은 <strong>이용자가 권리를 가졌거나 저장이 허용된 콘텐츠</strong>를 내려받는 용도로 제공됩니다.</p>
+<ul>
+  <li>내려받은 콘텐츠의 저작권은 <strong>원 게시자에게</strong> 있습니다.</li>
+  <li>앱은 내려받은 콘텐츠를 <strong>재배포하거나 호스팅하지 않습니다.</strong> 모든 파일은 이용자 기기에만 저장됩니다.</li>
+  <li>타인의 콘텐츠를 무단으로 배포하거나 상업적으로 이용하는 행위에 대한 책임은 이용자에게 있습니다.</li>
+  <li>플랫폼이 부착한 표식은 제거될 수 있으나, <strong>제작자가 영상 안에 직접 넣은 표식은 제거되지 않습니다.</strong></li>
+</ul>
+<p>권리 침해와 관련한 문의는 아래 연락처로 보내 주시면 확인하겠습니다.</p>
+
+<h2>7. 아동의 개인정보</h2>
+<p>이 앱은 아동을 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지 않습니다.
+개발자는 누구에게서도 개인정보를 보관하지 않으며, 광고 SDK의 수집은 5항에 밝혔습니다. 만 14세 미만 아동이 보호자 동의 없이 이용하는 것을 권하지 않습니다.</p>
+
+<h2>8. 제3자 제공</h2>
+<p><strong>개발자가 직접 보유하거나 넘기는 이용자 정보는 없습니다.</strong> 보유한 정보가 없기 때문입니다.
+다만 앱 안의 광고 SDK가 5항의 정보를 <strong>Google에 직접</strong> 보내고, 이용자가 입력한 링크는 4항의 서비스로 전달됩니다.</p>
+<p>앱이 통신하는 외부 주체는 다음 셋뿐입니다.</p>
+<div class="wrap">
+<table>
+  <tr><th>대상</th><th>무엇이 오가는가</th></tr>
+  <tr><td>영상 정보 조회 서비스 (<code>tikwm.com</code>)</td><td>이용자가 입력한 링크 (4항 참고)</td></tr>
+  <tr><td>영상 제공 플랫폼의 배포 서버</td><td>영상·사진·음원 파일의 다운로드 요청</td></tr>
+  <tr><td>Google AdMob</td><td>광고 ID·IP 주소(대략적인 위치)·광고 상호작용·진단 정보 (5항 참고)</td></tr>
+</table>
+</div>
+
+<h2>9. 이용자의 권리</h2>
+<ul>
+  <li><strong>기록 삭제</strong> — 앱 설정의 [다운로드 기록 지우기]에서 한 번에, 보관함에서 항목별로 지울 수 있습니다. 갤러리의 파일은 남습니다.</li>
+  <li><strong>파일 삭제</strong> — 저장된 파일은 갤러리 앱에서 직접 지울 수 있습니다.</li>
+  <li><strong>광고 동의 변경</strong> — 앱 설정에서 다시 선택할 수 있습니다.</li>
+  <li><strong>광고 ID 초기화</strong> — Android 시스템 설정에서 언제든 가능합니다.</li>
+  <li><strong>전부 삭제</strong> — 앱을 삭제하면 앱이 기기에 저장한 모든 정보가 함께 사라집니다.</li>
+</ul>
+<p>개발자가 보관하는 이용자 정보가 없으므로, 열람·정정·삭제를 개발자에게 요청하실 필요가 없습니다.</p>
+
+<h2>10. 방침 변경</h2>
+<p>내용이 바뀌면 이 페이지의 효력 시작일을 갱신합니다. 중요한 변경이 있을 때는 앱 안에서도 알려 드립니다.</p>
+
+<h2>11. 문의</h2>
+<p>궁금한 점이나 권리 침해 신고는 아래로 보내 주세요.</p>
+<p><strong>njhstudio26@gmail.com</strong></p>
+
+</section>
+
+<footer><p>이 앱은 어떤 플랫폼과도 제휴·후원 관계가 없으며, 언급된 상표는 각 소유자의 재산입니다.<br>
+  This app is not affiliated with or endorsed by any platform. Trademarks belong to their respective owners.</p>
+</footer>
+
+</body>
+</html>
