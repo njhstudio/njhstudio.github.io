@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Dure · 개인정보 처리방침</title>
+<meta name="description" content="Dure bill-splitting app privacy policy. No accounts, no servers. · 두레 정산 앱의 개인정보처리방침. 계정도 서버도 없습니다.">
+<link rel="canonical" href="https://njhstudio.github.io/privacy/dure.html">
+<!--
+  게시 위치: https://njhstudio.github.io/privacy/dure.html
+  원본은 Dure 저장소의 docs/PRIVACY_POLICY.md 이다. **거기를 고치고 여기로 옮긴다** —
+  게시본만 고치면 다음에 저장소에서 옮길 때 조용히 되돌아간다.
+
+  형제 앱(galpi.html 등)과 같은 꼴이다: 한 페이지에 **영문 → 한국어**를 모두 싣는다.
+  스크립트 없이 읽히고 검색·번역·화면 낭독기가 두 언어를 다 보게 한다.
+
+  **영문이 먼저다.** 문서 언어를 en 으로 두고 한국어 절만 section lang="ko" 로 감싼다.
+-->
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 5rem;
+    font: 16px/1.75 -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+    word-break: keep-all;
+  }
+  h1 { font-size: 1.6rem; margin-top: 2.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .93rem; }
+  th, td { border: 1px solid #8886; padding: .5rem .6rem; text-align: left; vertical-align: top; }
+  th { background: #8881; }
+  .lead { padding: .9rem 1.1rem; border-left: 3px solid #00696D; background: #00696d22; }
+  .lead p { margin: .3rem 0; }
+  hr { margin: 3.5rem 0; border: 0; border-top: 1px solid #8886; }
+  .date { opacity: .7; font-size: .9rem; }
+  .wrap { overflow-x: auto; }
+  a { overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+
+<section lang="en">
+
+<h1>Privacy Policy — Dure</h1>
+<p class="date">Effective: 2026-10-10 &middot; NJHouse</p>
+
+<div class="lead">
+  <p>Dure (&ldquo;the app&rdquo;) splits bills and settles up with the people you shared them with.</p>
+  <p><strong>There are no accounts, and we run no servers.</strong></p>
+</div>
+
+<h2>1. What we do not collect</h2>
+<p>The developer collects <strong>no user data</strong>. There is no analytics SDK, no crash reporter, and no user identifier. Specifically, none of the following ever reaches the developer:</p>
+<ul>
+  <li>group names, member names, expense titles, memos</li>
+  <li>amounts, split results, who owes whom</li>
+  <li>receipt photos</li>
+  <li>bank account numbers</li>
+  <li>names, e-mail addresses, phone numbers, or any identity information</li>
+</ul>
+
+<h2>2. What is stored on your device</h2>
+<div class="wrap">
+<table>
+<tr><th>What</th><th>Where</th></tr>
+<tr><td>Groups, members, expenses, splits, settlement history</td><td>App database on device</td></tr>
+<tr><td>Receipt photos you attach</td><td>App storage on device</td></tr>
+<tr><td>Bank account numbers you enter</td><td>App database on device &mdash; <strong>never included in a shared code</strong></td></tr>
+<tr><td>Settings (currency, rounding unit, your name)</td><td>App preferences on device</td></tr>
+</table>
+</div>
+<p>Uninstalling the app deletes this data. Backup files you create yourself remain where you saved them.</p>
+
+<h2>3. Network use</h2>
+<p>The app uses the internet in exactly two situations:</p>
+<div class="wrap">
+<table>
+<tr><th>Purpose</th><th>Who it goes to</th><th>What is sent</th></tr>
+<tr><td>Exchange rates</td><td><code>api.frankfurter.app</code>, <code>api.exchangerate.host</code></td><td><strong>One base-currency code</strong> (for example <code>KRW</code>). Nothing else.</td></tr>
+<tr><td>Ads</td><td>Google AdMob</td><td>See section 4</td></tr>
+</table>
+</div>
+<p>Those two rate services necessarily see your <strong>IP address</strong> while handling the request &mdash; that is a property of all internet traffic, not something the app sends. Group names, member names, amounts and device identifiers are <strong>not</strong> part of the request.</p>
+<p>Requests to any address outside that allow-list are <strong>blocked inside the app</strong>. Everything else &mdash; splitting, settling, sharing, statistics, backup &mdash; works offline.</p>
+
+<h2>4. Advertising</h2>
+<p>The app is free and is paid for by <strong>Google AdMob</strong> ads. There are no paid features, no subscriptions, and no in-app purchases.</p>
+<p>To serve ads, <strong>Google and its partners</strong> may collect and use:</p>
+<ul>
+  <li>the advertising identifier (Android advertising ID)</li>
+  <li>IP address, and the approximate location inferred from it</li>
+  <li>device information (model, OS version, language)</li>
+  <li>ad impressions, clicks and other interactions</li>
+  <li>diagnostic information generated while the app is used</li>
+</ul>
+<p>This is collected <strong>by Google</strong>. What reaches the developer is aggregated revenue statistics only, from which individual users cannot be identified.</p>
+<ul>
+  <li>Google&rsquo;s privacy policy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+  <li>How Google uses information from partner apps: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a></li>
+  <li>Reset or delete your advertising ID: device Settings &rarr; Google &rarr; Ads</li>
+</ul>
+<p><strong>If you are in the EEA or the UK</strong>, a Google User Messaging Platform (UMP) consent form is shown before the first ad request. Declining does not restrict any feature of the app; ads are then shown in a <strong>non-personalised</strong> form. You can change that choice at any time under <strong>Settings &rarr; Ad privacy settings</strong>.</p>
+
+<h2>5. Permissions</h2>
+<div class="wrap">
+<table>
+<tr><th>Permission</th><th>Used for</th><th>Does anything leave the device?</th></tr>
+<tr><td>Camera</td><td>Scanning a Dure Code, photographing a receipt</td><td>No. Photos stay on the device; receipts are read on-device.</td></tr>
+<tr><td>Notifications</td><td>Recurring-expense and settlement reminders</td><td>No. These are <strong>local</strong> notifications &mdash; no push server is used.</td></tr>
+<tr><td>Internet</td><td>Exchange rates, ads</td><td>See sections 3 and 4.</td></tr>
+<tr><td>Advertising ID</td><td>AdMob</td><td>See section 4. Not used for personalised ads if you decline.</td></tr>
+</table>
+</div>
+
+<h2>6. About the payment-app buttons</h2>
+<p>The settlement screen has buttons that open Toss, KakaoPay, Venmo, PayPal, Wise or Revolut, with apps you already have listed first.</p>
+<p><strong>The app does not read the list of programs installed on your device.</strong> Android offers a permission that enumerates every installed app (<code>QUERY_ALL_PACKAGES</code>); this app <strong>does not use it</strong>. What the app does is ask the system, <em>for those six apps only</em>, &ldquo;can this be opened?&rdquo; &mdash; and those six are written out in <code>AndroidManifest</code>.</p>
+<p>The answer is used only to order the buttons on screen, and <strong>never leaves the device</strong>.</p>
+
+<h2>7. Sharing with other people (Dure Code)</h2>
+<p>You can share a group as a QR code, a link, or a file. That data goes <strong>directly to the other device without passing through any server</strong>, and the developer cannot see it.</p>
+<p>A shared code <strong>never contains bank account numbers.</strong> Those stay on your device.</p>
+<p>Whatever you use to deliver the code (messenger, e-mail and so on) is governed by that service&rsquo;s own privacy policy. Anyone who receives the QR code or link can read the expenses inside it, so take care whom you share it with.</p>
+
+<h2>8. Retention and deletion</h2>
+<p>Data stays on the device until you delete it. Deleting a group or an expense inside the app, or uninstalling the app, deletes it. The developer keeps no copy, so data deleted from the device <strong>cannot be recovered</strong>.</p>
+
+<h2>9. Children</h2>
+<p>This app is not directed primarily at children.</p>
+
+<h2>10. Changes</h2>
+<p>If this policy changes, the date above is updated. Changes that widen what is collected are announced separately inside the app.</p>
+
+<h2>11. Contact</h2>
+<p><strong>Email: <a href="mailto:njhstudio26@gmail.com">njhstudio26@gmail.com</a></strong></p>
+
+</section>
+
+<hr>
+
+<section lang="ko">
+
+<h1>개인정보 처리방침 — 두레</h1>
+<p class="date">시행일: 2026-10-10 &middot; NJHouse</p>
+
+<div class="lead">
+  <p>두레(이하 &ldquo;이 앱&rdquo;)는 함께 쓴 돈을 나누고 정산하는 앱입니다.</p>
+  <p><strong>이 앱에는 계정이 없고, 우리가 운영하는 서버도 없습니다.</strong></p>
+</div>
+
+<h2>1. 우리가 수집하지 않는 것</h2>
+<p>이 앱의 개발자는 사용자의 어떤 정보도 <strong>수집하지 않습니다.</strong> 분석 도구(Analytics)&middot;크래시 리포터&middot;사용자 식별자를 넣지 않았습니다. 구체적으로 다음은 개발자에게 전혀 전달되지 않습니다:</p>
+<ul>
+  <li>그룹 이름, 참여자 이름, 지출 내용, 메모</li>
+  <li>금액, 분담 결과, 누가 누구에게 보내는지</li>
+  <li>영수증 사진</li>
+  <li>계좌번호</li>
+  <li>이름&middot;이메일&middot;전화번호 등 신원 정보</li>
+</ul>
+
+<h2>2. 기기 안에 저장되는 것</h2>
+<div class="wrap">
+<table>
+<tr><th>무엇을</th><th>어디에</th></tr>
+<tr><td>그룹, 참여자, 지출, 분담, 정산 기록</td><td>기기 안의 앱 데이터베이스</td></tr>
+<tr><td>첨부한 영수증 사진</td><td>기기 안의 앱 저장소</td></tr>
+<tr><td>입력한 계좌번호</td><td>기기 안의 앱 데이터베이스 &mdash; <strong>공유 코드에는 절대 들어가지 않습니다</strong></td></tr>
+<tr><td>설정(통화, 절사 단위, 내 이름)</td><td>기기 안의 앱 설정</td></tr>
+</table>
+</div>
+<p>앱을 삭제하면 이 데이터도 함께 지워집니다. 사용자가 직접 만든 백업 파일은 저장한 자리에 그대로 남습니다.</p>
+
+<h2>3. 기기를 떠나는 통신</h2>
+<p>앱이 네트워크를 쓰는 경우는 다음 두 가지뿐입니다.</p>
+<div class="wrap">
+<table>
+<tr><th>용도</th><th>대상</th><th>보내는 내용</th></tr>
+<tr><td>환율 갱신</td><td><code>api.frankfurter.app</code>, <code>api.exchangerate.host</code></td><td><strong>기준 통화 코드 한 개</strong>(예: <code>KRW</code>). 그 외에는 아무것도 보내지 않습니다.</td></tr>
+<tr><td>광고</td><td>Google AdMob</td><td>아래 4항 참조</td></tr>
+</table>
+</div>
+<p>두 환율 서버는 요청을 처리하는 과정에서 <strong>IP 주소</strong>를 보게 됩니다. 이는 모든 인터넷 통신의 성질이며, 앱이 따로 보내는 정보는 아닙니다. 요청에 그룹&middot;참여자&middot;금액&middot;기기 식별자는 <strong>포함되지 않습니다.</strong></p>
+<p>허용 목록 밖의 주소로는 요청이 나가지 않도록 <strong>앱 안에서 차단</strong>합니다. 그 밖의 모든 기능 &mdash; 나누기, 정산, 공유, 통계, 백업 &mdash; 은 오프라인에서 동작합니다.</p>
+
+<h2>4. 광고 (Google AdMob)</h2>
+<p>앱은 무료이며, 비용은 <strong>Google AdMob</strong> 광고로 충당합니다. 유료 기능&middot;구독&middot;인앱결제는 없습니다.</p>
+<p>광고를 표시하기 위해 <strong>Google 및 그 파트너</strong>가 다음을 수집&middot;이용할 수 있습니다.</p>
+<ul>
+  <li>광고 식별자(Android 광고 ID)</li>
+  <li>IP 주소 및 그로부터 추정되는 <strong>대략적 위치</strong></li>
+  <li>기기 정보(모델, OS 버전, 언어 등)</li>
+  <li>광고 노출&middot;클릭 등 상호작용 기록</li>
+  <li>앱 사용 중 발생한 진단 정보</li>
+</ul>
+<p>이는 <strong>Google 이 수집하는 것</strong>이며, 개발자에게 전달되는 것은 집계된 수익 통계뿐입니다(개별 사용자를 식별할 수 없습니다).</p>
+<ul>
+  <li>Google 개인정보처리방침: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+  <li>Google 이 파트너 앱 정보를 이용하는 방식: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a></li>
+  <li>광고 ID 재설정&middot;삭제: 기기 설정 &rarr; Google &rarr; 광고</li>
+</ul>
+<p><strong>유럽경제지역&middot;영국 등에서는</strong> 첫 광고 요청 전에 Google 사용자 메시지 플랫폼(UMP) 동의 양식을 표시합니다. 동의를 거부해도 앱의 모든 기능은 그대로 동작하며, 광고는 <strong>비맞춤</strong> 형태로 표시됩니다. 설정 화면의 <strong>「개인 맞춤 광고 설정」</strong>에서 언제든지 선택을 바꿀 수 있습니다.</p>
+
+<h2>5. 권한</h2>
+<div class="wrap">
+<table>
+<tr><th>권한</th><th>쓰는 곳</th><th>데이터가 나가는가</th></tr>
+<tr><td>카메라</td><td>두레 코드 스캔, 영수증 촬영</td><td>나가지 않습니다. 사진은 기기에만 저장되고 영수증은 기기 안에서 읽습니다.</td></tr>
+<tr><td>알림</td><td>반복 지출&middot;정산 리마인더</td><td>나가지 않습니다. <strong>로컬 알림</strong>이며 푸시 서버를 쓰지 않습니다.</td></tr>
+<tr><td>인터넷</td><td>환율 갱신, 광고</td><td>위 3&middot;4항을 보십시오.</td></tr>
+<tr><td>광고 ID</td><td>AdMob</td><td>위 4항. 동의를 거부하면 맞춤 광고에 쓰이지 않습니다.</td></tr>
+</table>
+</div>
+
+<h2>6. 송금 앱 버튼에 대하여</h2>
+<p>정산 화면에는 토스&middot;카카오페이&middot;Venmo&middot;PayPal&middot;Wise&middot;Revolut 로 바로 가는 버튼이 있고, 이미 설치된 앱이 앞쪽에 옵니다.</p>
+<p><strong>앱은 기기에 설치된 프로그램 목록을 조회하지 않습니다.</strong> Android 에는 설치된 앱 전체를 열거하는 권한(<code>QUERY_ALL_PACKAGES</code>)이 있지만 이 앱은 <strong>쓰지 않습니다.</strong> 앱이 하는 일은 위 <strong>6개에 대해서만</strong> &ldquo;이 앱을 열 수 있는가&rdquo;를 시스템에 묻는 것이고, 그 6개는 <code>AndroidManifest</code> 에 그대로 적혀 있습니다.</p>
+<p>물어본 결과는 화면 순서를 바꾸는 데만 쓰이며 <strong>기기 밖으로 나가지 않습니다.</strong></p>
+
+<h2>7. 다른 사람과 공유할 때 (두레 코드)</h2>
+<p>그룹을 QR 코드&middot;링크&middot;파일로 공유하는 기능이 있습니다. 이 데이터는 <strong>서버를 거치지 않고</strong> 상대 기기로 직접 전달되며, 개발자는 그 내용을 알 수 없습니다.</p>
+<p>공유되는 코드에는 <strong>계좌번호가 절대 포함되지 않습니다.</strong> 계좌번호는 기기에만 남습니다.</p>
+<p>전달 수단(메신저&middot;메일 등)은 각자의 개인정보처리방침을 따릅니다. QR 코드나 링크를 받은 사람은 그 안의 지출 내역을 볼 수 있으므로, 공유 대상에 유의하십시오.</p>
+
+<h2>8. 보관 기간과 삭제</h2>
+<p>데이터는 사용자가 지울 때까지 기기에 남습니다. 앱 안에서 그룹&middot;지출을 삭제하거나 앱을 삭제하면 함께 지워집니다. 개발자가 보관하는 사본은 없으므로, 기기에서 지운 데이터는 <strong>복구할 수 없습니다.</strong></p>
+
+<h2>9. 아동</h2>
+<p>이 앱은 아동을 대상으로 하지 않습니다.</p>
+
+<h2>10. 변경</h2>
+<p>방침이 바뀌면 이 문서를 갱신하고 시행일을 고칩니다. 수집 범위가 넓어지는 변경은 앱 안에서 별도로 알립니다.</p>
+
+<h2>11. 문의</h2>
+<p><strong>이메일: <a href="mailto:njhstudio26@gmail.com">njhstudio26@gmail.com</a></strong></p>
+
+</section>
+
+</body>
+</html>
