@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Baldidim · 발디딤 개인정보 처리방침</title>
+<meta name="description" content="Baldidim (발디딤) hiking app privacy policy. Your hiking records and location stay on your device. · 등산 앱 발디딤의 개인정보처리방침. 산행 기록과 위치는 기기 밖으로 나가지 않습니다.">
+<link rel="canonical" href="https://njhstudio.github.io/privacy/baldidim.html">
+<!--
+  게시 위치: https://njhstudio.github.io/privacy/baldidim.html
+  원본은 NJHHiking 저장소의 docs/privacy/baldidim.html 이다. **원본을 고치고 복사한다** —
+  게시본만 고치면 다음에 원본에서 복사할 때 조용히 되돌아간다.
+  앱 안 원문(settings_screen.dart PrivacyScreen)·Play 데이터 보안 양식과 같은 사실을 말해야 한다.
+
+  형제 앱(malgeum.html 등)과 같은 꼴이다: 한 페이지에 영문 → 한국어를 모두 싣는다.
+  문서 언어는 en, 한국어 절만 section lang="ko".
+
+  근거가 된 앱 사실(2026-10-23 코드 기준, 패키지 kr.njhouse.footing):
+  - 위치: ACCESS_FINE/COARSE_LOCATION, 포그라운드 서비스(location) — 사용자가 시작한 산행 기록 중에만.
+    ACCESS_BACKGROUND_LOCATION 은 매니페스트에서 제거. 기록(GPS 점·시각·고도)은 기기 SQLite 에만.
+  - 외부 GPS 수신기(블루투스, BLUETOOTH_CONNECT): 사용자가 고른 기기에서 위치만 받음.
+  - 사진: image_picker(시스템 카메라 앱 — CAMERA 권한 없음), 앱 저장소에 저장. 공유 카드는 gal 로 갤러리 저장(사용자 선택).
+  - 네트워크(앱 자체): 공공데이터포털(apis.data.go.kr) — 날씨는 기상청 격자(약 5km)로 바꾼 좌표,
+    근처 식당·카페는 조회 중심 좌표 그대로(소상공인시장진흥공단 상가정보·한국관광공사).
+    지도 타일(tile.openstreetmap.org, tile.opentopomap.org) — 보이는 영역의 타일 번호.
+    등산로(Overpass: overpass-api.de 등) — 산 주변 영역(사용자 위치 아님).
+  - 사용자가 누를 때만: 공유(share_plus), GPX·백업 내보내기, SOS(전화 다이얼러·문자 앱에 좌표·국가지점번호),
+    길찾기(카카오맵·네이버 지도), 문의 메일.
+  - 광고: Google AdMob(배너·네이티브·전면·앱 오프닝·보상형[공유 카드 장식만]), UMP 동의(필요 지역만).
+  - 분석·크래시 SDK·로그인·회원가입·인앱결제 없음. 개발자 서버 없음.
+-->
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 5rem;
+    font: 16px/1.75 -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+    word-break: keep-all;
+  }
+  h1 { font-size: 1.6rem; margin-top: 2.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .93rem; }
+  th, td { border: 1px solid #8886; padding: .5rem .6rem; text-align: left; vertical-align: top; }
+  th { background: #8881; }
+  .lead { padding: .9rem 1.1rem; border-left: 3px solid #123B4A; background: #123b4a22; }
+  .lead p { margin: .3rem 0; }
+  hr { margin: 3.5rem 0; border: 0; border-top: 1px solid #8886; }
+  .date { opacity: .7; font-size: .9rem; }
+  .wrap { overflow-x: auto; }
+  a { overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+
+<section lang="en">
+
+<h1>Privacy Policy — Baldidim (발디딤)</h1>
+<p class="date">Effective: 2026-10-23 &middot; NJHouse</p>
+
+<div class="lead">
+  <p>Baldidim (&ldquo;the app&rdquo;) is a free hiking app for Korea: it records your hike, guides you to the summit, plans courses, awards summit badges, finds places to eat after the hike, and provides safety features (SOS, off-route and sunset warnings).</p>
+  <p><strong>Your hiking records and location are stored only on your device. There are no accounts, and we run no servers &mdash; the developer never receives your location.</strong></p>
+</div>
+
+<h2>1. What we do not collect</h2>
+<p>The developer collects <strong>no user data</strong>. None of the following is ever sent to the developer:</p>
+<ul>
+  <li>your location and GPS tracks, hiking records, and summit certifications</li>
+  <li>photos you take in the app, and share cards</li>
+  <li>saved courses, GPX files, and app settings</li>
+  <li>names, e-mail addresses, phone numbers, or any identity information (there is no sign-up)</li>
+</ul>
+<p>The app contains no analytics or crash-reporting tools.</p>
+
+<h2>2. Location</h2>
+<ul>
+  <li>The app uses your precise location (latitude, longitude, altitude, time) <strong>only while you are recording a hike that you started</strong>, and to show where you are on the map and which mountains are nearby. While recording, a notification stays on screen so recording can continue with the screen off.</li>
+  <li>The app does <strong>not</strong> request &ldquo;Allow all the time&rdquo; (background) location.</li>
+  <li>If you connect an external GPS receiver over Bluetooth, the app only reads location data from the device you choose.</li>
+  <li>Location is used on your device. It leaves your device only in the cases listed in section 4.</li>
+</ul>
+
+<h2>3. What is stored on your device</h2>
+<div class="wrap">
+<table>
+<tr><th>What</th><th>Why</th><th>Where</th></tr>
+<tr><td>Hiking records (GPS track, time, distance, elevation), summit certifications and badges</td><td>Recording, results, history, badges</td><td>App database on device</td></tr>
+<tr><td>Photos taken in the app</td><td>Showing them on your hike record and share card</td><td>App storage on device (a share card is saved to your gallery only when you choose to)</td></tr>
+<tr><td>Saved courses, imported GPX courses</td><td>Course planning and guidance</td><td>App database on device</td></tr>
+<tr><td>Settings (units, map type, GPS source, etc.)</td><td>Keeping your choices</td><td>App preferences on device</td></tr>
+<tr><td>Map tiles and trail data you viewed; today&rsquo;s weather and nearby-place results</td><td>Showing the map again faster and offline; reducing repeat requests</td><td>App cache on device</td></tr>
+<tr><td>Times ads were last shown</td><td>Limiting how often full-screen ads appear</td><td>App preferences on device</td></tr>
+</table>
+</div>
+<p>Uninstalling the app or deleting a record deletes this data. Backup files you export yourself stay where you saved them.</p>
+
+<h2>4. When information leaves your device</h2>
+<p><strong>Only when you use these features:</strong></p>
+<ul>
+  <li><strong>Share, GPX export, backup export</strong>: the card or file goes to the app or location you choose.</li>
+  <li><strong>SOS</strong>: the phone dialer opens for 112/119, and a text with your coordinates and national grid point number is prepared in your messaging app. Nothing is sent until you send it.</li>
+  <li><strong>Directions</strong>: the destination is passed to the map app you choose (Kakao Map, Naver Map).</li>
+</ul>
+<p><strong>Requests the app makes to public data and map services</strong> (these services also see your device&rsquo;s IP address, as with any internet request):</p>
+<div class="wrap">
+<table>
+<tr><th>Feature</th><th>Sent to</th><th>What is sent</th></tr>
+<tr><td>Weather</td><td>Korea Meteorological Administration via the Korean public data portal (data.go.kr)</td><td>A forecast grid cell (about 5 km) derived from your location or the mountain</td></tr>
+<tr><td>Places to eat after the hike</td><td>Small Enterprise and Market Service and Korea Tourism Organization via data.go.kr</td><td>The coordinates of the search center (where you finished, or the point you chose) and search radius</td></tr>
+<tr><td>Map</td><td>OpenStreetMap, OpenTopoMap tile servers</td><td>Tile numbers for the map area you view</td></tr>
+<tr><td>Trails for mountains without built-in data</td><td>OpenStreetMap Overpass servers</td><td>The area around the mountain (not your location)</td></tr>
+</table>
+</div>
+<p>The developer does not receive any of these requests.</p>
+
+<h2>5. Advertising</h2>
+<p>The app is free and shows ads from <strong>Google AdMob</strong> (banners at the bottom of screens, native ads in lists, a full-screen ad when opening a mountain&rsquo;s details, an app-open ad, and optional rewarded ads for decorative share-card themes). <strong>No full-screen ads appear while you are recording a hike, at the summit, or on the SOS screen.</strong> To serve ads, AdMob may collect your device&rsquo;s advertising ID, approximate location (from IP address), and ad interaction and diagnostic data. This is collected by Google; the developer does not receive it. Your GPS tracks and hiking records are never shared with Google or anyone else.</p>
+<ul>
+  <li>Google&rsquo;s data practices: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a></li>
+  <li>Reset or delete your advertising ID: device Settings &rarr; Google &rarr; Ads (or Settings &rarr; Privacy &rarr; Ads)</li>
+</ul>
+<p>Where consent is required by law (such as the EEA and the UK), the app asks for advertising consent first, and you can change it under <strong>Settings &rarr; Ad privacy settings</strong>.</p>
+<p>No feature of the app is locked behind ads or payment, and there are no in-app purchases.</p>
+
+<h2>6. Permissions</h2>
+<div class="wrap">
+<table>
+<tr><th>Permission</th><th>Why</th></tr>
+<tr><td>Location (precise/approximate)</td><td>Recording your hike, showing your position, finding nearby mountains</td></tr>
+<tr><td>Foreground service (location), notifications</td><td>Continuing to record with the screen off and showing the recording notification</td></tr>
+<tr><td>Nearby devices (Bluetooth)</td><td>Only if you connect an external GPS receiver</td></tr>
+</table>
+</div>
+<p>Photos are taken with your device&rsquo;s camera app, so the app does not request camera or storage permission.</p>
+
+<h2>7. Children</h2>
+<p>This app is not directed at children under 14.</p>
+
+<h2>8. Changes</h2>
+<p>If this policy changes, the date above is updated and significant changes are announced in the app.</p>
+
+<h2>9. Contact</h2>
+<p>Privacy officer: NJHouse<br><strong>Email: <a href="mailto:njhstudio26@gmail.com">njhstudio26@gmail.com</a></strong></p>
+
+</section>
+
+<hr>
+
+<section lang="ko">
+
+<h1>개인정보 처리방침 — 발디딤</h1>
+<p class="date">시행일: 2026-10-23 &middot; NJHouse</p>
+
+<div class="lead">
+  <p>발디딤(이하 &ldquo;이 앱&rdquo;)은 산행 기록, 정상까지 안내, 코스 계획, 정상 인증 배지, 하산 후 맛집&middot;카페 찾기, 안전 기능(SOS&middot;경로 이탈&middot;일몰 경고)을 갖춘 무료 등산 앱입니다.</p>
+  <p><strong>산행 기록과 위치는 사용자 기기 안에만 저장됩니다. 이 앱에는 계정이 없고 우리가 운영하는 서버도 없어, 개발자는 사용자의 위치를 받지 않습니다.</strong></p>
+</div>
+
+<h2>1. 우리가 수집하지 않는 것</h2>
+<p>이 앱의 개발자는 사용자의 어떤 정보도 <strong>수집하지 않습니다.</strong> 다음은 개발자에게 전송되지 않습니다.</p>
+<ul>
+  <li>위치와 GPS 경로, 산행 기록, 정상 인증</li>
+  <li>앱에서 찍은 사진, 공유 카드</li>
+  <li>저장한 코스, GPX 파일, 앱 설정</li>
+  <li>이름&middot;이메일&middot;전화번호 등 신원 정보(회원 가입이 없습니다)</li>
+</ul>
+<p>이 앱에는 사용 통계&middot;오류 보고 도구가 들어 있지 않습니다.</p>
+
+<h2>2. 위치 정보</h2>
+<ul>
+  <li>이 앱은 <strong>사용자가 직접 시작한 산행을 기록하는 동안</strong> 정확한 위치(위도&middot;경도&middot;고도&middot;시각)를 사용하고, 지도에 내 위치와 근처 산을 보여 줄 때 위치를 사용합니다. 기록 중에는 화면이 꺼져도 기록이 이어지도록 알림이 표시됩니다.</li>
+  <li>&ldquo;항상 허용&rdquo;(백그라운드) 위치 권한은 <strong>요청하지 않습니다.</strong></li>
+  <li>블루투스로 외부 GPS 수신기를 연결하면, 사용자가 고른 기기에서 위치 정보만 받습니다.</li>
+  <li>위치는 기기 안에서 쓰이며, 아래 4절의 경우에만 기기 밖으로 나갑니다.</li>
+</ul>
+
+<h2>3. 기기 안에 저장되는 것</h2>
+<div class="wrap">
+<table>
+<tr><th>무엇</th><th>왜</th><th>어디에</th></tr>
+<tr><td>산행 기록(GPS 경로&middot;시각&middot;거리&middot;고도), 정상 인증&middot;배지</td><td>기록, 결과, 내 기록, 배지</td><td>기기의 앱 데이터베이스</td></tr>
+<tr><td>앱에서 찍은 사진</td><td>산행 기록&middot;공유 카드에 표시</td><td>기기의 앱 저장 공간(공유 카드는 사용자가 저장을 고를 때만 갤러리에 저장)</td></tr>
+<tr><td>저장한 코스, 불러온 GPX 코스</td><td>코스 계획과 안내</td><td>기기의 앱 데이터베이스</td></tr>
+<tr><td>설정(단위, 지도 종류, GPS 수신 방식 등)</td><td>선택 유지</td><td>기기의 앱 설정 저장소</td></tr>
+<tr><td>본 지도 타일&middot;등산로 데이터, 오늘의 날씨&middot;근처 장소 결과</td><td>지도를 다시 빠르게&middot;오프라인으로 표시, 같은 요청 줄이기</td><td>기기의 앱 캐시</td></tr>
+<tr><td>광고를 마지막으로 보여 준 시각</td><td>전면광고 빈도 제한</td><td>기기의 앱 설정 저장소</td></tr>
+</table>
+</div>
+<p>앱을 삭제하거나 기록을 지우면 위 데이터도 함께 지워집니다. 사용자가 직접 내보낸 백업 파일은 저장한 곳에 남습니다.</p>
+
+<h2>4. 정보가 기기 밖으로 나가는 경우</h2>
+<p><strong>사용자가 다음 기능을 직접 쓸 때만:</strong></p>
+<ul>
+  <li><strong>공유&middot;GPX 내보내기&middot;백업 내보내기</strong>: 사용자가 고른 앱이나 위치로 카드&middot;파일이 전달됩니다.</li>
+  <li><strong>SOS</strong>: 112&middot;119 전화 화면이 열리고, 문자 앱에 내 좌표와 국가지점번호가 담긴 문자가 준비됩니다. 사용자가 보내기 전에는 전송되지 않습니다.</li>
+  <li><strong>길찾기</strong>: 목적지가 사용자가 고른 지도 앱(카카오맵&middot;네이버 지도)으로 전달됩니다.</li>
+</ul>
+<p><strong>앱이 공공데이터&middot;지도 서비스에 보내는 요청</strong>(모든 인터넷 요청처럼 해당 서비스는 기기의 IP 주소를 볼 수 있습니다):</p>
+<div class="wrap">
+<table>
+<tr><th>기능</th><th>받는 곳</th><th>보내는 것</th></tr>
+<tr><td>날씨</td><td>기상청(공공데이터포털 data.go.kr 경유)</td><td>내 위치 또는 산 위치를 바꾼 예보 격자(약 5km 단위)</td></tr>
+<tr><td>하산 후 식당&middot;카페</td><td>소상공인시장진흥공단&middot;한국관광공사(공공데이터포털 경유)</td><td>찾는 곳의 중심 좌표(하산 지점 또는 사용자가 고른 곳)와 반경</td></tr>
+<tr><td>지도</td><td>OpenStreetMap&middot;OpenTopoMap 지도 서버</td><td>보고 있는 지도 영역의 타일 번호</td></tr>
+<tr><td>내장 데이터가 없는 산의 등산로</td><td>OpenStreetMap Overpass 서버</td><td>산 주변 영역(사용자 위치 아님)</td></tr>
+</table>
+</div>
+<p>개발자는 이 요청들을 받지 않습니다.</p>
+
+<h2>5. 광고</h2>
+<p>이 앱은 무료이며 <strong>Google AdMob</strong>의 광고를 표시합니다(화면 아래 배너, 목록 사이 광고, 산 상세에 들어갈 때 전면광고, 앱을 열 때 광고, 공유 카드 장식 테마를 위한 선택형 보상 광고). <strong>산행 기록 중&middot;정상 인증&middot;SOS 화면에는 전면광고를 띄우지 않습니다.</strong> AdMob은 광고 제공을 위해 기기의 광고 ID, 대략적인 위치(IP 기준), 광고 상호작용&middot;진단 정보 등을 수집할 수 있습니다. 이는 Google이 수집하는 것이며, 개발자는 그 데이터를 받지 않습니다. 사용자의 GPS 경로와 산행 기록은 Google을 포함한 누구에게도 공유되지 않습니다.</p>
+<ul>
+  <li>Google의 데이터 처리: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a></li>
+  <li>광고 ID 재설정&middot;삭제: 기기 설정 &rarr; Google &rarr; 광고 (또는 설정 &rarr; 개인정보 보호 &rarr; 광고)</li>
+</ul>
+<p>법에 따라 동의가 필요한 지역(유럽경제지역&middot;영국 등)에서는 광고 동의를 먼저 받으며, <strong>설정 &rarr; 광고 개인정보 설정</strong>에서 바꿀 수 있습니다.</p>
+<p>광고를 봐야 쓸 수 있는 기능이나 유료 기능은 없으며, 인앱 결제도 없습니다.</p>
+
+<h2>6. 권한</h2>
+<div class="wrap">
+<table>
+<tr><th>권한</th><th>이유</th></tr>
+<tr><td>위치(정확한&middot;대략적인 위치)</td><td>산행 기록, 내 위치 표시, 근처 산 찾기</td></tr>
+<tr><td>포그라운드 서비스(위치), 알림</td><td>화면이 꺼져도 기록을 이어 가고 기록 중 알림 표시</td></tr>
+<tr><td>근처 기기(블루투스)</td><td>외부 GPS 수신기를 연결할 때만</td></tr>
+</table>
+</div>
+<p>사진은 기기의 카메라 앱으로 찍으므로, 카메라&middot;저장소 권한은 요청하지 않습니다.</p>
+
+<h2>7. 아동</h2>
+<p>이 앱은 만 14세 미만 아동을 대상으로 하지 않습니다.</p>
+
+<h2>8. 방침 변경</h2>
+<p>방침이 바뀌면 이 페이지의 시행일을 갱신하고, 중요한 변경은 앱 안에서 알려 드립니다.</p>
+
+<h2>9. 문의</h2>
+<p>개인정보 보호책임자: NJHouse<br><strong>이메일: <a href="mailto:njhstudio26@gmail.com">njhstudio26@gmail.com</a></strong></p>
+
+</section>
+
+</body>
+</html>
