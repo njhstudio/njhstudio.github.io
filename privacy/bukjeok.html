@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Bukjeok · 개인정보 처리방침</title>
+<meta name="description" content="Bukjeok commercial-area analysis app privacy policy. No accounts, no developer servers; your saved places stay on your device. · 북적 상권분석 앱의 개인정보처리방침. 계정과 개발자 서버가 없고, 저장한 후보지는 기기 안에만 남습니다.">
+<link rel="canonical" href="https://njhstudio.github.io/privacy/bukjeok.html">
+<!--
+  게시 위치: https://njhstudio.github.io/privacy/bukjeok.html
+  원본은 NJHMktAnal(bukjeok) 저장소의 docs/privacy/bukjeok.html 이다. **원본을 고치고 복사한다** —
+  게시본만 고치면 다음에 원본에서 복사할 때 조용히 되돌아간다.
+  방침과 Play 데이터 보안 양식(docs/store/data-safety.md)은 같은 사실을 말해야 한다.
+
+  형제 앱(malgeum.html 등)과 같은 꼴이다: 한 페이지에 영문 → 한국어를 모두 싣는다.
+  문서 언어는 en, 한국어 절만 section lang="ko".
+
+  근거가 된 앱 사실(2026-11-01 코드 기준): 권한 INTERNET·ACCESS_NETWORK_STATE·위치(대략·정확)·POST_NOTIFICATIONS,
+  로그인·서버·분석·크래시 SDK·인앱결제 없음. 외부 요청: 카카오 로컬(검색어·좌표), 공공데이터포털(상가정보·인허가·실거래가),
+  통계청 SGIS, 한국부동산원 R-ONE, 브이월드 지도 타일, njhstudio.github.io/bukjeok-data(서울 집계 정적 파일),
+  Google AdMob·UMP. 기기 저장: 저장한 후보지·지표 스냅샷, 최근 본 위치 15곳, 공공데이터 응답 캐시, 관심상권 알림 설정·직전 집계,
+  광고 빈도 기록(설치일, 마지막 시작·전면 광고 시각, 하루 횟수). 광고: 하단 배너, 리포트 본문 300×250, 리포트 닫을 때 전면,
+  앱을 켤 때 시작 광고. 관심상권 알림은 WorkManager 주 1회 백그라운드 확인.
+-->
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 5rem;
+    font: 16px/1.75 -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+    word-break: keep-all;
+  }
+  h1 { font-size: 1.6rem; margin-top: 2.5rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .93rem; }
+  th, td { border: 1px solid #8886; padding: .5rem .6rem; text-align: left; vertical-align: top; }
+  th { background: #8881; }
+  .lead { padding: .9rem 1.1rem; border-left: 3px solid #1F4D47; background: #1f4d4722; }
+  .lead p { margin: .3rem 0; }
+  hr { margin: 3.5rem 0; border: 0; border-top: 1px solid #8886; }
+  .date { opacity: .7; font-size: .9rem; }
+  .wrap { overflow-x: auto; }
+  a { overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+
+<section lang="en">
+
+<h1>Privacy Policy — Bukjeok</h1>
+<p class="date">Effective: 2026-11-01 &middot; NJHouse</p>
+
+<div class="lead">
+  <p>Bukjeok (&ldquo;the app&rdquo;) analyzes a commercial area in Korea &mdash; demand, sales, competition and store survival &mdash; using <strong>public data</strong> for the spot you pick on the map.</p>
+  <p><strong>There are no accounts, and we run no servers. The developer does not receive your location, your searches or the places you save.</strong></p>
+</div>
+
+<h2>1. What we do not collect</h2>
+<p>The developer collects <strong>no user data</strong>. None of the following is ever sent to the developer:</p>
+<ul>
+  <li>your current location or the places you look at on the map</li>
+  <li>your search words</li>
+  <li>the candidate places you save, their scores, and your recently viewed places</li>
+  <li>app settings and notification settings</li>
+  <li>names, e-mail addresses, phone numbers, or any identity information</li>
+</ul>
+<p>Scores are calculated <strong>on your device</strong> with fixed formulas. The app does not use AI to analyze you or your data.</p>
+
+<h2>2. Data sent to outside services to make the app work</h2>
+<p>To show maps and public statistics, the app sends requests directly from your device to the services below. These requests contain the <strong>search words you type, or the map coordinates and administrative area codes of the spot you pick</strong> &mdash; not your name or any account. The developer does not receive these requests.</p>
+<div class="wrap">
+<table>
+<tr><th>Service</th><th>What is sent</th><th>Why</th></tr>
+<tr><td>Kakao Local API (Kakao Corp.)</td><td>Search words; coordinates of the spot you pick or of your current location</td><td>Address/place search and finding the district of a spot</td></tr>
+<tr><td>Public data APIs: data.go.kr (Small Enterprise and Market Service store data, Ministry of the Interior licensing data, Ministry of Land real-estate transactions), Statistics Korea SGIS, Korea Real Estate Board R-ONE</td><td>Coordinates, radius, district codes, business category</td><td>Stores, licenses, population, rent and transaction statistics for the area</td></tr>
+<tr><td>VWorld map tiles (Ministry of Land)</td><td>Map tile positions of the area shown on screen</td><td>Drawing the background map</td></tr>
+<tr><td>njhstudio.github.io (GitHub Pages)</td><td>District codes (the file names of public aggregate files)</td><td>Seoul sales, living-population and weekly opening/closing aggregates prepared from public data</td></tr>
+</table>
+</div>
+<p>Each service handles requests under its own privacy policy (for example, it may keep your IP address in its access logs). Kakao: <a href="https://www.kakao.com/policy/privacy">kakao.com/policy/privacy</a> &middot; GitHub: <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a></p>
+
+<h2>3. Location</h2>
+<ul>
+  <li>The app uses your location <strong>only when you tap the &ldquo;My location&rdquo; button</strong> and allow location permission.</li>
+  <li>The coordinates are used once to move the map and to find the district (sent to Kakao and to the public data APIs above). They are <strong>not stored</strong> and are not sent to the developer.</li>
+  <li>If you deny location permission, you can still pick a spot on the map or search for it.</li>
+</ul>
+
+<h2>4. What is stored on your device</h2>
+<div class="wrap">
+<table>
+<tr><th>What</th><th>Why</th><th>Where</th></tr>
+<tr><td>Saved candidate places and a snapshot of their scores</td><td>The Saved and Compare tabs</td><td>App storage on device</td></tr>
+<tr><td>Recently viewed places (up to 15)</td><td>Quick access in search</td><td>App storage on device</td></tr>
+<tr><td>Cached public-data responses</td><td>Faster loading and showing the last data when offline</td><td>App cache on device; can be cleared in <strong>Settings &rarr; Clear cache</strong></td></tr>
+<tr><td>Area-alert on/off and the last weekly aggregate seen</td><td>Detecting new openings/closings near your saved places</td><td>App storage on device</td></tr>
+<tr><td>Install date, time of the last app-open and full-screen ads, and today&rsquo;s ad counts</td><td>Limiting how often full-screen ads appear</td><td>App storage on device</td></tr>
+</table>
+</div>
+<p>Uninstalling the app, or clearing its storage in Android settings, deletes all of the above. You can also remove a saved place by swiping it away.</p>
+
+<h2>5. Area alerts (optional)</h2>
+<p>If you turn on <strong>Settings &rarr; Area alerts</strong> (notification permission required), the app checks about once a week in the background. It downloads the public weekly aggregate files from njhstudio.github.io and compares them <strong>on your device</strong> with your saved places. Your saved places are never sent anywhere.</p>
+
+<h2>6. Advertising</h2>
+<p>The app is free and shows ads from <strong>Google AdMob</strong>: a banner at the bottom of the screen, one ad inside the report, a full-screen ad sometimes when you close a report, and an ad sometimes when you open the app. To serve ads, AdMob may collect your device&rsquo;s advertising ID, approximate location (from IP address), and ad interaction and diagnostic data. This is collected by Google; the developer does not receive it. Your saved places and searches are not shared with Google.</p>
+<ul>
+  <li>Google&rsquo;s data practices: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a></li>
+  <li>Reset or delete your advertising ID: device Settings &rarr; Google &rarr; Ads (or Settings &rarr; Privacy &rarr; Ads)</li>
+</ul>
+<p><strong>If you are in the EEA or the UK</strong>, the app asks for your advertising consent the first time you open it. You can change that choice at any time under <strong>Settings &rarr; Ad consent settings</strong>. Declining does not restrict any feature of the app.</p>
+<p>No feature of the app is locked behind ads or payment, and there are no in-app purchases or subscriptions.</p>
+
+<h2>7. Permissions</h2>
+<div class="wrap">
+<table>
+<tr><th>Permission</th><th>When it is used</th><th>If you deny it</th></tr>
+<tr><td>Location (approximate, precise)</td><td>Only when you tap &ldquo;My location&rdquo;</td><td>Pick a spot on the map or search instead</td></tr>
+<tr><td>Notifications</td><td>Only when you turn on area alerts</td><td>Only alerts are off</td></tr>
+<tr><td>Internet</td><td>Maps, public data and ads</td><td>&mdash;</td></tr>
+</table>
+</div>
+
+<h2>8. Children</h2>
+<p>This app provides business information for adults and is not directed at children.</p>
+
+<h2>9. Changes</h2>
+<p>If this policy changes, the date above is updated and significant changes are announced in the app.</p>
+
+<h2>10. Contact</h2>
+<p><strong>Email: <a href="mailto:njhstudio26@gmail.com">njhstudio26@gmail.com</a></strong></p>
+
+</section>
+
+<hr>
+
+<section lang="ko">
+
+<h1>개인정보 처리방침 — 북적</h1>
+<p class="date">시행일: 2026-11-01 &middot; NJHouse</p>
+
+<div class="lead">
+  <p>북적(이하 &ldquo;이 앱&rdquo;)은 지도에서 고른 자리의 상권을 <strong>공공데이터</strong>로 분석해 수요·매출·경쟁·생존율을 보여 주는 앱입니다.</p>
+  <p><strong>이 앱에는 계정이 없고, 우리가 운영하는 서버도 없습니다. 개발자는 사용자의 위치, 검색어, 저장한 후보지를 받지 않습니다.</strong></p>
+</div>
+
+<h2>1. 우리가 수집하지 않는 것</h2>
+<p>이 앱의 개발자는 사용자의 어떤 정보도 <strong>수집하지 않습니다.</strong> 다음은 개발자에게 전송되지 않습니다.</p>
+<ul>
+  <li>현재 위치, 지도에서 살펴본 장소</li>
+  <li>검색어</li>
+  <li>저장한 후보지와 그 점수, 최근 본 위치</li>
+  <li>앱 설정과 알림 설정</li>
+  <li>이름&middot;이메일&middot;전화번호 등 신원 정보</li>
+</ul>
+<p>점수는 정해진 산식으로 <strong>기기 안에서</strong> 계산합니다. 사용자나 사용자의 데이터를 AI로 분석하지 않습니다.</p>
+
+<h2>2. 앱 기능을 위해 외부 서비스로 보내는 정보</h2>
+<p>지도와 공공 통계를 보여 주려고 사용자 기기에서 아래 서비스로 직접 요청을 보냅니다. 요청에는 <strong>사용자가 입력한 검색어, 또는 고른 자리의 지도 좌표와 행정구역 코드</strong>가 담기며, 이름이나 계정은 담기지 않습니다. 개발자는 이 요청을 받지 않습니다.</p>
+<div class="wrap">
+<table>
+<tr><th>서비스</th><th>보내는 정보</th><th>목적</th></tr>
+<tr><td>카카오 로컬 API(㈜카카오)</td><td>검색어, 고른 자리 또는 현재 위치의 좌표</td><td>주소·장소 검색, 좌표의 행정구역 찾기</td></tr>
+<tr><td>공공데이터 API: 공공데이터포털(소상공인시장진흥공단 상가정보, 행정안전부 인허가, 국토교통부 실거래가), 통계청 SGIS, 한국부동산원 R-ONE</td><td>좌표, 반경, 행정구역 코드, 업종</td><td>그 지역의 점포·인허가·인구·임대료·실거래 통계</td></tr>
+<tr><td>브이월드 지도(국토교통부)</td><td>화면에 보이는 지역의 지도 타일 위치</td><td>배경 지도 표시</td></tr>
+<tr><td>njhstudio.github.io(GitHub Pages)</td><td>행정구역 코드(공개 집계 파일 이름)</td><td>공공데이터로 미리 만든 서울 추정매출·생활인구, 주간 개업·폐업 집계</td></tr>
+</table>
+</div>
+<p>각 서비스는 자체 개인정보처리방침에 따라 요청을 처리합니다(예: 접속 기록에 IP 주소를 남길 수 있음). 카카오: <a href="https://www.kakao.com/policy/privacy">kakao.com/policy/privacy</a> &middot; GitHub: <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a></p>
+
+<h2>3. 위치 정보</h2>
+<ul>
+  <li>위치는 <strong>&lsquo;내 위치&rsquo; 버튼을 누르고 위치 권한을 허용했을 때만</strong> 씁니다.</li>
+  <li>좌표는 지도를 옮기고 행정구역을 찾는 데 한 번 쓰이며(위 카카오·공공데이터 API로 전송), <strong>저장하지 않고</strong> 개발자에게 보내지 않습니다.</li>
+  <li>위치 권한을 허용하지 않아도 지도에서 직접 고르거나 검색해 그대로 쓸 수 있습니다.</li>
+</ul>
+
+<h2>4. 기기 안에 저장되는 것</h2>
+<div class="wrap">
+<table>
+<tr><th>무엇</th><th>왜</th><th>어디에</th></tr>
+<tr><td>저장한 후보지와 점수 스냅샷</td><td>저장·비교 탭</td><td>기기의 앱 저장소</td></tr>
+<tr><td>최근 본 위치(최대 15곳)</td><td>검색 화면에서 바로 다시 보기</td><td>기기의 앱 저장소</td></tr>
+<tr><td>공공데이터 응답 캐시</td><td>빠른 표시, 인터넷이 끊겼을 때 마지막 데이터 보여 주기</td><td>기기의 앱 캐시. <strong>설정 &rarr; 캐시 지우기</strong>로 삭제</td></tr>
+<tr><td>관심상권 알림 켜짐 여부, 직전에 확인한 주간 집계</td><td>저장한 후보지 동네의 새 개업·폐업 찾기</td><td>기기의 앱 저장소</td></tr>
+<tr><td>설치일, 마지막 시작·전면 광고 시각, 오늘 광고 횟수</td><td>전면형 광고 빈도 제한</td><td>기기의 앱 저장소</td></tr>
+</table>
+</div>
+<p>앱을 삭제하거나 안드로이드 설정에서 앱 저장공간을 지우면 위 데이터는 모두 지워집니다. 저장한 후보지는 밀어서 하나씩 지울 수도 있습니다.</p>
+
+<h2>5. 관심상권 알림(선택)</h2>
+<p><strong>설정 &rarr; 관심상권 알림</strong>을 켜면(알림 권한 필요) 일주일에 한 번쯤 백그라운드에서 확인합니다. njhstudio.github.io의 공개 주간 집계 파일을 내려받아 저장한 후보지와 <strong>기기 안에서</strong> 비교합니다. 저장한 후보지는 어디로도 보내지 않습니다.</p>
+
+<h2>6. 광고</h2>
+<p>이 앱은 무료이며 <strong>Google AdMob</strong>의 광고를 표시합니다(화면 아래 배너, 리포트 본문 광고 1개, 리포트를 닫을 때 가끔 전면광고, 앱을 켤 때 가끔 시작 광고). AdMob은 광고 제공을 위해 기기의 광고 ID, 대략적인 위치(IP 기준), 광고 상호작용·진단 정보 등을 수집할 수 있습니다. 이는 Google이 수집하는 것이며, 개발자는 그 데이터를 받지 않습니다. 저장한 후보지와 검색어는 Google에 공유되지 않습니다.</p>
+<ul>
+  <li>Google의 데이터 처리: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a></li>
+  <li>광고 ID 재설정&middot;삭제: 기기 설정 &rarr; Google &rarr; 광고 (또는 설정 &rarr; 개인정보 보호 &rarr; 광고)</li>
+</ul>
+<p><strong>유럽경제지역(EEA)&middot;영국 사용자</strong>에게는 앱을 처음 열 때 광고 개인 설정에 대한 동의를 묻습니다. 그 선택은 <strong>설정 &rarr; 광고 동의 설정</strong>에서 언제든 다시 바꿀 수 있습니다. 동의하지 않으셔도 앱의 모든 기능을 쓸 수 있습니다.</p>
+<p>광고를 봐야 쓸 수 있는 기능이나 유료 기능은 없으며, 인앱 결제와 구독도 없습니다.</p>
+
+<h2>7. 권한</h2>
+<div class="wrap">
+<table>
+<tr><th>권한</th><th>쓰는 때</th><th>거부하면</th></tr>
+<tr><td>위치(대략·정확)</td><td>&lsquo;내 위치&rsquo; 버튼을 누를 때만</td><td>지도에서 고르거나 검색해서 이용</td></tr>
+<tr><td>알림</td><td>관심상권 알림을 켤 때만</td><td>알림만 꺼짐</td></tr>
+<tr><td>인터넷</td><td>지도, 공공데이터, 광고</td><td>&mdash;</td></tr>
+</table>
+</div>
+
+<h2>8. 어린이</h2>
+<p>이 앱은 성인을 위한 창업·상권 정보를 제공하며 어린이를 대상으로 하지 않습니다.</p>
+
+<h2>9. 방침 변경</h2>
+<p>방침이 바뀌면 이 페이지의 시행일을 갱신하고, 중요한 변경은 앱 안에서 알려 드립니다.</p>
+
+<h2>10. 문의</h2>
+<p><strong>이메일: <a href="mailto:njhstudio26@gmail.com">njhstudio26@gmail.com</a></strong></p>
+
+</section>
+
+</body>
+</html>
