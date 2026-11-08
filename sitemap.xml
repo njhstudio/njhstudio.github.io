@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://njhstudio.github.io/
-ieum/
-ieum/en.html
-privacy/baldidim.html
-privacy/bukjeok.html
-privacy/dadeum.html
-privacy/damda.html
-privacy/damdains.html
-privacy/damdatik.html
-privacy/dure.html
-privacy/galpi.html
-privacy/hearim.html
-privacy/ieum.html
-privacy/malgeum.html
-privacy/nanal.html
-privacy/takbon.html
-support/damda.html</loc></url>
   <url><loc>https://njhstudio.github.io/</loc></url>
+  <url><loc>https://njhstudio.github.io/ieum/</loc></url>
+  <url><loc>https://njhstudio.github.io/ieum/en.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/baldidim.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/bukjeok.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/dadeum.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/damda.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/damdains.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/damdatik.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/dure.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/galpi.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/hearim.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/ieum.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/malgeum.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/nanal.html</loc></url>
+  <url><loc>https://njhstudio.github.io/privacy/takbon.html</loc></url>
+  <url><loc>https://njhstudio.github.io/support/damda.html</loc></url>
 </urlset>
