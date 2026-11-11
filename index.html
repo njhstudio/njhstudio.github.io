@@ -1,33 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NJHouse — 필요한 일만 하는 Android 앱</title>
-<meta name="description" content="계정을 요구하지 않고, 처리는 기기 안에서 끝나는 작은 Android 앱을 만듭니다.">
+<title>NJHouse — 필요한 일만 하는 앱</title>
+<meta name="description" content="계정을 요구하지 않고, 처리는 기기 안에서 끝나는 작은 앱을 만듭니다. NJHouse의 앱 모음.">
+<meta property="og:title" content="NJHouse — 필요한 일만 하는 앱">
+<meta property="og:description" content="계정을 요구하지 않고, 처리는 기기 안에서 끝나는 작은 앱을 만듭니다.">
 <style>
   :root {
     color-scheme: light dark;
-    --bg: #fbfbfa;
-    --surface: #ffffff;
-    --border: #e6e4e0;
-    --text: #1a1a19;
-    --muted: #6b6963;
-    --faint: #97948d;
-    --accent: #2f6f5e;
-    --badge-bg: #f0efec;
+    --bg: #fcfbff;
+    --card: #ffffff;
+    --card-tint: #f3effd;
+    --line: #d8cdf3;
+    --text: #1d1a26;
+    --muted: #625d70;
+    --faint: #8a8597;
+    --accent: #7b5ce0;
+    --accent-soft: #c9b8f6;
+    --ink: #231e33;
+    --ink-text: #f4f1fb;
+    --ink-muted: #b9b2cc;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #14140f;
-      --surface: #1c1c18;
-      --border: #2e2e28;
-      --text: #ecebe6;
-      --muted: #a3a099;
-      --faint: #78756e;
-      --accent: #7fc0ac;
-      --badge-bg: #26261f;
+      --bg: #121018;
+      --card: #1b1823;
+      --card-tint: #221d30;
+      --line: #3a3150;
+      --text: #ece9f3;
+      --muted: #aaa4b8;
+      --faint: #8d879b;
+      --accent: #b39cff;
+      --accent-soft: #5c4a92;
+      --ink: #0d0b13;
+      --ink-text: #ece9f3;
+      --ink-muted: #a59fb4;
     }
   }
 
@@ -41,162 +50,167 @@
                  "Pretendard", "Malgun Gothic", "Noto Sans KR", "Segoe UI", sans-serif;
     font-size: 16px;
     line-height: 1.7;
+    word-break: keep-all;
     -webkit-font-smoothing: antialiased;
   }
 
   .wrap {
-    max-width: 42rem;
+    max-width: 72rem;
     margin: 0 auto;
     padding: 4.5rem 1.5rem 3rem;
   }
 
   /* ---- header ---- */
-  header { margin-bottom: 3.5rem; }
+  header { margin-bottom: 3rem; max-width: 42rem; }
 
   .brand {
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent);
-    margin: 0 0 1.5rem;
+    margin: 0 0 1.25rem;
   }
 
   h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 1.55;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
     letter-spacing: -0.01em;
     margin: 0 0 0.6rem;
   }
 
-  .en {
-    color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 1.65;
-    margin: 0;
-  }
+  .en { color: var(--muted); font-size: 0.95rem; line-height: 1.65; margin: 0; }
 
-  /* ---- app cards ---- */
-  .apps {
+  /* ---- app cards ----
+     카드 3열. 설명 상자는 어두운 것과 흰 것이 바둑판으로 엇갈리고(홀수 카드가 어두움),
+     설명이 흰 카드는 바탕을 연보라로 칠해 상자가 묻히지 않게 한다. */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+  }
+  @media (max-width: 960px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    background: var(--card);
+    border: 1.5px dashed var(--line);
+    border-radius: 20px;
+    padding: 0.85rem;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .card:nth-child(even) { background: var(--card-tint); }
+  .card:has(.go):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px -14px rgba(83, 56, 170, 0.35);
   }
 
-  .app {
-    background: var(--surface);
-    border: 1px solid var(--border);
+  .cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     border-radius: 14px;
-    padding: 1.6rem 1.5rem;
   }
 
-  .app-head {
+  .head {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.85rem;
-    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding: 1rem 0.35rem 0.9rem;
   }
 
-  .app h2 {
-    font-size: 1.15rem;
-    font-weight: 600;
+  .icon {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .name { flex: 1; min-width: 0; }
+
+  .card h2 {
+    font-size: 1.12rem;
+    font-weight: 700;
     letter-spacing: -0.01em;
+    line-height: 1.35;
     margin: 0;
   }
 
-  .badge {
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: var(--faint);
-    background: var(--badge-bg);
-    border-radius: 999px;
-    padding: 0.2rem 0.65rem;
-    white-space: nowrap;
-  }
+  /* 카드 전체를 누를 수 있게 제목 링크를 카드 크기로 넓힌다. */
+  .go { color: inherit; text-decoration: none; }
+  .go::after { content: ""; position: absolute; inset: 0; border-radius: 20px; }
+  .go:focus-visible { outline: none; }
+  .card:has(.go:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-  /* 출시된 앱. 배지가 아니라 **누를 수 있는 링크**다 — 사람들이 가장 먼저
-     찾는 것이 스토어 링크라서, 눈에 띄되 제목을 가리지 않게 둔다. */
-  .badge-live {
+  .cat { margin: 0.1rem 0 0; font-size: 0.8rem; color: var(--muted); line-height: 1.45; }
+
+  .soon {
+    display: inline-block;
+    margin-top: 0.35rem;
     font-size: 0.72rem;
     font-weight: 600;
     color: var(--accent);
-    background: transparent;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--accent-soft);
     border-radius: 999px;
-    padding: 0.2rem 0.7rem;
-    white-space: nowrap;
-    border-bottom: 1px solid var(--accent);
-  }
-  .badge-live:hover { background: var(--accent); color: var(--bg); }
-
-  .lead {
-    margin: 0 0 0.35rem;
-    font-weight: 500;
+    padding: 0.05rem 0.6rem;
   }
 
-  .lead-en {
-    margin: 0 0 1rem;
-    color: var(--muted);
-    font-size: 0.92rem;
+  .arrow {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: #fff;
+    transition: background 0.18s ease;
   }
+  .card:nth-child(even) .arrow { background: var(--accent); }
+  .card:hover .arrow { background: var(--accent); }
+  .arrow svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 
-  .app p.body { margin: 0 0 0.35rem; }
-
-  .app p.body-en {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.92rem;
+  .desc {
+    margin-top: auto;
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    background: var(--card);
+    font-size: 0.88rem;
     line-height: 1.65;
   }
+  .card:nth-child(odd) .desc { background: var(--ink); color: var(--ink-text); }
+  .desc p { margin: 0; }
+  .desc .en { margin-top: 0.45rem; font-size: 0.8rem; color: var(--muted); }
+  .card:nth-child(odd) .desc .en { color: var(--ink-muted); }
 
   /* ---- about ---- */
   .about {
-    margin-top: 3.5rem;
+    margin-top: 4rem;
     padding-top: 2rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--line);
+    max-width: 46rem;
   }
-
-  .about h2 {
-    font-size: 1.05rem;
-    letter-spacing: -0.01em;
-    margin: 0 0 0.9rem;
-  }
-
-  .about p {
-    margin: 0 0 0.9rem;
-    color: var(--muted);
-  }
-
-  .about .en {
-    color: var(--faint);
-    font-size: 0.92rem;
-  }
+  .about h2 { font-size: 1.05rem; letter-spacing: -0.01em; margin: 0 0 0.9rem; }
+  .about p { margin: 0 0 0.9rem; color: var(--muted); }
+  .about .en { color: var(--faint); font-size: 0.92rem; }
 
   /* ---- footer ---- */
   footer {
     margin-top: 3.5rem;
     padding-top: 1.75rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--line);
     font-size: 0.85rem;
     color: var(--faint);
   }
-
   footer p { margin: 0 0 0.5rem; }
-
-  /* 사업자 정보는 한 줄로 길어지므로 조금 더 작게, 줄바꿈을 허용한다. */
-  footer .biz {
-    font-size: 0.8rem;
-    line-height: 1.6;
-  }
-
-  footer .copy {
-    margin-top: 0.9rem;
-    /* `--border` 로 두면 거의 안 보인다 — 저작권 줄은 읽혀야 한다. */
-    color: var(--faint);
-    font-size: 0.8rem;
-  }
+  footer .biz { font-size: 0.8rem; line-height: 1.6; }
+  footer .copy { margin-top: 0.9rem; color: var(--faint); font-size: 0.8rem; }
 
   a {
     color: var(--accent);
@@ -205,20 +219,12 @@
     transition: border-color 0.15s ease;
   }
   a:hover { border-bottom-color: currentColor; }
+  .go, .go:hover { border-bottom: 0; }
 
-  .sep { color: var(--border); margin: 0 0.4rem; }
+  .sep { color: var(--line); margin: 0 0.4rem; }
 
-  /* 방침 링크 줄.
-     `</a><span class="sep">·</span><a>`처럼 붙여 쓰면 **브라우저가 줄을
-     바꿀 자리를 찾지 못해** 360px 폭에서 마지막 링크가 잘려 나간다. 앱이
-     늘수록 확실해지는 문제라 flex로 접히게 둔다. `gap`을 0으로 두고 여백은
-     `.sep`이 그대로 담당하므로 간격은 지금과 같다. */
-  footer .privacy {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0;
-  }
+  /* 방침 링크 줄은 좁은 화면에서 접히도록 flex 로 둔다. */
+  footer .privacy { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0; }
 
   @media (max-width: 480px) {
     .wrap { padding-top: 3rem; }
@@ -231,95 +237,200 @@
 
   <header>
     <p class="brand">NJHouse</p>
-    <h1>필요한 일만 하는 Android 앱을 만듭니다.<br>계정을 요구하지 않고, 처리는 기기 안에서 끝냅니다.</h1>
-    <p class="en">We build small Android apps that do one thing. No accounts, and the work stays on your device.</p>
+    <h1>필요한 일만 하는 앱을 만듭니다.<br>계정을 요구하지 않고, 처리는 기기 안에서 끝냅니다.</h1>
+    <p class="en">We build small apps that do one thing. No accounts, and the work stays on your device.</p>
   </header>
 
-  <main class="apps">
-
-    <section class="app">
-      <div class="app-head">
-        <h2>Damda</h2>
-        <a class="badge-live"
-           href="https://play.google.com/store/apps/details?id=kr.njhouse.download">Google Play &rarr;</a>
+  <main class="grid">
+    <article class="card">
+      <img class="cover" src="apps/damda.jpg" width="960" height="540" alt="Damda 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/damda-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2><a class="go" href="https://play.google.com/store/apps/details?id=kr.njhouse.download">Damda</a></h2>
+          <p class="cat">X(트위터) 영상 저장 · X video saver</p>
+        </div>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
       </div>
-      <p class="lead">X(트위터) 링크를 붙여넣으면 갤러리에 저장돼요.</p>
-      <p class="lead-en">Paste an X (Twitter) link, and it saves to your gallery.</p>
-      <p class="body">원본이 제공하는 화질 그대로 저장합니다. 화질을 직접 고를 수 있고, 한 게시물에 영상이 여러 개면 원하는 것만 골라 한 번에 받습니다. 로그인이 필요 없습니다.</p>
-      <p class="body-en">Saves without a watermark, at the quality the source provides. You pick the quality, and when a post holds several videos you choose the ones you want. No sign-in.</p>
-    </section>
-
-    <section class="app">
-      <div class="app-head">
-        <h2>Dadeum</h2>
-        <!-- **확인할 것: 이 링크는 지금 일반 방문자에게 열리지 않는다.**
-             실기에서 눌러 보니 Play 페이지 제목이 "Dadeum … (내부 베타)"이고
-             "귀하는 내부 테스터입니다"라고 뜬다. 즉 내부 테스트 트랙이라
-             테스터로 등록되지 않은 사람은 페이지를 열 수 없다.
-             정식 트랙으로 승격한 뒤에 이 배지를 남기고, 그 전이라면
-             아래 한 줄로 되돌린다:
-               <span class="badge">공개 준비 중 · Coming soon</span>          -->
-        <a class="badge-live"
-           href="https://play.google.com/store/apps/details?id=kr.njhouse.videoeditor">Google Play &rarr;</a>
+      <div class="desc">
+        <p>트위터(X) 영상·GIF를 링크만 붙여넣으면 워터마크 없이 갤러리에 저장해요. 로그인은 필요 없어요.</p>
+        <p class="en">Paste an X (Twitter) link and its videos and GIFs save to your gallery, no watermark. No sign-in.</p>
       </div>
-      <p class="lead">영상을 자르고, 자막과 음악을 얹어 내보냅니다.</p>
-      <p class="lead-en">Trim your video, add subtitles and music, then export.</p>
-      <p class="body">워터마크를 붙이지 않고 4K까지 무료입니다. &ldquo;프리미엄&rdquo; 자물쇠가 없어 자막 · 필터 · 전환 · 배속 · 내레이션 녹음이 처음부터 열려 있습니다. 로그인이 없고, 편집한 영상은 기기 밖으로 나가지 않습니다. 광고로 운영하지만 편집 화면에는 넣지 않았습니다.</p>
-      <p class="body-en">No watermark, and 4K export is free. Nothing sits behind a &ldquo;premium&rdquo; lock — subtitles, filters, transitions, speed and narration recording are all open from the start. No sign-in, and your video never leaves the device. Ads fund the app, but never on the editing screen.</p>
-    </section>
-
-    <section class="app">
-      <div class="app-head">
-        <h2>Galpi</h2>
-        <span class="badge">공개 준비 중 · Coming soon</span>
+    </article>
+    <article class="card">
+      <img class="cover" src="apps/damdatik.jpg" width="960" height="540" alt="DamdaTik 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/damdatik-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2><a class="go" href="https://play.google.com/store/apps/details?id=kr.njhouse.damdatik">DamdaTik</a></h2>
+          <p class="cat">틱톡 영상 저장 · TikTok video saver</p>
+        </div>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
       </div>
-      <p class="lead">내 폴더에 있는 책을 그대로 읽습니다. 읽는 중에는 광고가 없습니다.</p>
-      <p class="lead-en">Reads the books already in your folders. No ads while you read.</p>
-      <p class="body">EPUB &middot; PDF &middot; TXT를 엽니다. 다른 리더가 유료로 파는 것 &mdash; 음성 읽기, PDF 주석, 내 글꼴 추가, 위젯 책장, 지문 잠금 &mdash; 이 처음부터 열려 있습니다. 화면을 꺼도 계속 읽어 주고, 읽는 문장이 표시되며 페이지가 저절로 넘어갑니다. 주석은 원본 파일을 고치지 않고 따로 저장하며, 계정도 클라우드도 없어 기기를 옮길 때는 백업 파일 하나면 됩니다. 광고로 운영하지만 책을 펼친 순간부터 덮을 때까지, 음성으로 듣는 동안에도 넣지 않았습니다. <strong>DRM이 걸린 책은 열 수 없습니다</strong> &mdash; 서점에서 산 책은 그 서점 앱에서 보셔야 합니다.</p>
-      <p class="body-en">Opens EPUB, PDF and TXT. What other readers charge for &mdash; text-to-speech, PDF annotation, your own fonts, a home-screen shelf, fingerprint lock &mdash; is open from the start. It keeps reading with the screen off, highlighting the sentence and turning pages by itself. Annotations are stored separately and never modify your original file; there is no account and no cloud, so one backup file moves everything to a new phone. Ads fund the app, but never from the moment you open a book until you close it, nor while it reads aloud. <strong>DRM-protected books cannot be opened</strong> &mdash; books bought from a store must be read in that store&rsquo;s own app.</p>
-    </section>
-
-    <section class="app">
-      <div class="app-head">
-        <h2>Hearim</h2>
-        <span class="badge">공개 준비 중 · Coming soon</span>
+      <div class="desc">
+        <p>틱톡 영상을 워터마크 없이, 제공되는 가장 높은 화질로 저장해요. 공유 한 번이면 끝이고 사진·음원도 받을 수 있어요.</p>
+        <p class="en">Saves TikTok videos without a watermark, at the highest quality offered. One share is all it takes; photos and audio too.</p>
       </div>
-      <p class="lead">3탭이면 저장되는 가계부. 기록은 이 기기에만 남습니다.</p>
-      <p class="lead-en">A budget book that saves in three taps. Your records stay on this phone.</p>
-      <p class="body">＋ 를 누르고 금액을 치고 카테고리를 한 번 고르면 저장까지 끝납니다. 카드 결제 문자를 붙여넣거나 공유하면 금액&middot;가맹점&middot;날짜를 읽어 오지만, <strong>문자 권한은 요청하지 않습니다</strong> — 이용자가 건넨 문자만 기기 안에서 읽습니다. 달력에 하루 지출이 쌓여 한 달이 한 장으로 보이고, 예산은 &ldquo;오늘 얼마 써도 되는지&rdquo;로 환산해 알려 줍니다. 로그인이 없고 서버도 없습니다. 광고로 운영하지만 화면 맨 아래 한 줄뿐이고, 금액을 적는 입력 화면에는 넣지 않았습니다.</p>
-      <p class="body-en">Tap ＋, type the amount, pick a category — picking the category saves it. Paste or share a card-payment message and it reads the amount, merchant and date, yet <strong>it never asks for SMS permission</strong>: it only reads what you hand it, on the device. The calendar shades each day so a month reads at a glance, and a budget is shown as what you can still spend today. No sign-in, no server. Ads fund the app — one strip at the bottom of the screen, never in the entry sheet.</p>
-    </section>
-
-    <section class="app">
-      <div class="app-head">
-        <h2>Nanal</h2>
-        <span class="badge">공개 준비 중 &middot; Coming soon</span>
+    </article>
+    <article class="card">
+      <img class="cover" src="apps/damdains.jpg" width="960" height="540" alt="DamdaIns 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/damdains-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2><a class="go" href="https://play.google.com/store/apps/details?id=kr.njhouse.damdains">DamdaIns</a></h2>
+          <p class="cat">인스타 릴스·스토리 저장 · Instagram saver</p>
+        </div>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
       </div>
-      <p class="lead">하루 한 장의 사진과 한 줄. 달력이 사진으로 채워집니다.</p>
-      <p class="lead-en">One photo and one line a day. The calendar fills up with your photos.</p>
-      <p class="body">앱을 열고, 사진을 고르고, 저장. 3탭이면 오늘이 기록됩니다. 달력 칸마다 그날의 사진이 그대로 들어가 한 달이 지나면 달력이 사진으로 가득 차고, 홈 화면 위젯으로도 볼 수 있습니다. <strong>사진 권한은 요청하지 않습니다</strong> — 안드로이드 사진 선택 도구에서 이용자가 고른 한 장만 받습니다. 지운 기록은 30일 안에 되살릴 수 있고, 백업은 원할 때만 본인의 구글 드라이브로 올라갑니다. 광고로 운영하지만 일기를 쓰거나 읽는 화면에는 넣지 않았습니다.</p>
-      <p class="body-en">Open it, pick a photo, save &mdash; today is recorded in three taps. Each calendar cell holds that day&rsquo;s photo, so a month later the calendar is full of them, and a home-screen widget shows it too. <strong>It never asks for photo permission</strong>: Android&rsquo;s own picker hands over only the photo you chose. Deleted entries can be restored within 30 days, and backups go to your own Google Drive only when you ask for them. Ads fund the app, but never on the screens where you write or read.</p>
-    </section>
-
-    <section class="app">
-      <div class="app-head">
-        <h2><a href="ieum/">Ieum 이음</a></h2>
-        <span class="badge">iPhone &middot; 공개 준비 중 &middot; Coming soon</span>
+      <div class="desc">
+        <p>인스타그램 릴스·동영상·사진·스토리를 고화질 그대로 갤러리에 저장해요. 공유 한 번이면 다운로드가 끝나요.</p>
+        <p class="en">Saves Instagram Reels, videos, photos and stories to your gallery at full quality, in one share.</p>
       </div>
-      <p class="lead">할 일을 24시간 원형 시계 시간표 위에 놓는 플래너. 모든 기능이 무료입니다.</p>
-      <p class="lead-en">A planner that puts your to-dos on a 24-hour clock timetable. Every feature is free.</p>
-      <p class="body">하루가 시계 한 바퀴로 그려지고, 할 일은 그 시간 블록 안에 들어갑니다. 반복, 여러 개의 알림, 기한이 있는 통계, 집중 타이머와 배경 소리, 위젯을 구독 없이 씁니다. 계정이 없고 데이터는 기기 안에만 남습니다. 광고로 운영하지만 집중하는 동안과 할 일을 적는 동안에는 넣지 않았습니다. <a href="ieum/">자세히 보기</a></p>
-      <p class="body-en">Your day is drawn as one turn of a clock, and your to-dos sit inside its time blocks. Repeats, multiple alarms, stats with deadlines, a focus timer with background sounds and a widget, with no subscription. No account; your data stays on the device. Ads fund the app, but never while you focus or write a task. <a href="ieum/en.html">Learn more</a></p>
-    </section>
-
+    </article>
+    <article class="card">
+      <img class="cover" src="apps/dadeum.jpg" width="960" height="540" alt="Dadeum 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/dadeum-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2><a class="go" href="https://play.google.com/store/apps/details?id=kr.njhouse.videoeditor">Dadeum</a></h2>
+          <p class="cat">무료 영상 편집 · Video editor</p>
+        </div>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
+      </div>
+      <div class="desc">
+        <p>워터마크도, 잠긴 기능도 없는 영상 편집기. 자막·필터·음악을 넣고 4K까지 무료로 내보내요. 로그인이 없어요.</p>
+        <p class="en">A video editor with no watermark and nothing locked. Add subtitles, filters and music, and export up to 4K for free.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img class="cover" src="apps/malgeum.jpg" width="960" height="540" alt="Malgeum 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/malgeum-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2><a class="go" href="https://play.google.com/store/apps/details?id=kr.njhouse.malgeum">Malgeum</a></h2>
+          <p class="cat">사진·영상 화질 개선 · Photo & video upscaler</p>
+        </div>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
+      </div>
+      <div class="desc">
+        <p>업로드 없이 내 폰 안에서 사진·영상 화질을 높여요. 해상도 4배 확대와 노이즈 줄이기, 워터마크는 없어요.</p>
+        <p class="en">Upscales photos and videos on your phone, with no upload: 4× resolution, noise reduction, no watermark.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img class="cover" src="apps/galpi.jpg" width="960" height="540" alt="Galpi 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/galpi-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2><a class="go" href="https://play.google.com/store/apps/details?id=kr.njhouse.galpi">Galpi 갈피</a></h2>
+          <p class="cat">전자책 리더 · EPUB &amp; PDF reader</p>
+        </div>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
+      </div>
+      <div class="desc">
+        <p>읽는 동안엔 광고가 뜨지 않는 전자책 리더. EPUB·PDF를 열고, 책을 읽어 주는 TTS와 PDF 주석까지 무료예요.</p>
+        <p class="en">An e-book reader with no ads while you read. Opens EPUB and PDF, with read-aloud and PDF annotation for free.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img class="cover" src="apps/takbon.jpg" width="960" height="540" alt="TAKBON 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/takbon-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2>TAKBON 탁본</h2>
+          <p class="cat">문서 스캐너·글자 인식 · Scanner &amp; OCR</p>
+          <span class="soon">출시 준비 중 · Coming soon</span>
+        </div>
+      </div>
+      <div class="desc">
+        <p>워터마크·횟수 제한 없이 문서를 스캔하고, 글자를 인식해 검색되는 PDF로 만들어요. 문서는 기기 안에만 저장돼요.</p>
+        <p class="en">Scan documents with no watermark or limits, and turn them into searchable PDFs with OCR. Files stay on your device.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img class="cover" src="apps/hearim.jpg" width="960" height="540" alt="Hearim 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/hearim-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2><a class="go" href="https://play.google.com/store/apps/details?id=kr.njhouse.budgetbook">Hearim</a></h2>
+          <p class="cat">간편 가계부 · Budget book</p>
+        </div>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
+      </div>
+      <div class="desc">
+        <p>카드 결제 문자를 붙여넣으면 자동으로 입력돼요. 3탭이면 기록되는 달력 가계부로 지출과 예산을 관리해요. 로그인 없음.</p>
+        <p class="en">Paste a card-payment message and it fills itself in. A three-tap calendar budget book for spending and budgets. No sign-in.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img class="cover" src="apps/nanal.jpg" width="960" height="540" alt="Nanal 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/nanal-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2><a class="go" href="https://play.google.com/store/apps/details?id=kr.njhouse.njhdiary">Nanal</a></h2>
+          <p class="cat">사진 일기 · Photo diary</p>
+        </div>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
+      </div>
+      <div class="desc">
+        <p>하루 한 장의 사진과 한 줄. 일기를 쓸수록 달력이 그날의 사진으로 채워져요.</p>
+        <p class="en">One photo and one line a day. The more you write, the more your calendar fills with each day&rsquo;s photo.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img class="cover" src="apps/baldidim.jpg" width="960" height="540" alt="Baldidim 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/baldidim-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2><a class="go" href="https://play.google.com/store/apps/details?id=kr.njhouse.footing">Baldidim 발디딤</a></h2>
+          <p class="cat">등산 기록·코스 계획 · Hiking tracker</p>
+        </div>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
+      </div>
+      <div class="desc">
+        <p>구독·결제 없는 등산 앱. 산행 기록과 코스 계획, 100대 명산 정상 인증, 하산 후 맛집과 SOS까지 담았어요.</p>
+        <p class="en">A hiking app with no subscription: track hikes, plan routes, certify summits of the 100 famous mountains, plus food nearby and SOS.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img class="cover" src="apps/bukjeok.jpg" width="960" height="540" alt="Bukjeok 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/bukjeok-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2><a class="go" href="https://play.google.com/store/apps/details?id=kr.njhouse.bukjeok">Bukjeok 북적</a></h2>
+          <p class="cat">상권 분석 · Market analysis</p>
+        </div>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
+      </div>
+      <div class="desc">
+        <p>지도에서 자리만 고르면 상권 등급과 경쟁 점포·유동인구·생존율·임대료까지. 예비 창업자를 위한 무료 상권 분석.</p>
+        <p class="en">Pick a spot on the map to see its grade, competitors, foot traffic, survival rate and rent. Free market analysis for founders.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img class="cover" src="apps/ieum.jpg" width="960" height="540" alt="Ieum 앱 화면" loading="lazy">
+      <div class="head">
+        <img class="icon" src="apps/ieum-icon.png" width="44" height="44" alt="">
+        <div class="name">
+          <h2><a class="go" href="ieum/">Ieum 이음</a></h2>
+          <p class="cat">24시간 원형 플래너 · Clock planner</p>
+          <span class="soon">iPhone · 출시 준비 중</span>
+        </div>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
+      </div>
+      <div class="desc">
+        <p>할 일을 24시간 원형 시계 시간표 위에 놓는 플래너. 반복·알림·통계·집중 타이머를 구독 없이 써요.</p>
+        <p class="en">A planner that puts your to-dos on a 24-hour clock. Repeats, alarms, stats and a focus timer, with no subscription.</p>
+      </div>
+    </article>
   </main>
 
   <section class="about">
     <h2>NJHouse</h2>
-    <p>필요한 일만 하는 Android 앱을 만드는 1인 개발 스튜디오입니다. 큰 앱을 작게 쪼개는 대신, <strong>하나의 일을 끝까지 하는 앱</strong>을 만듭니다.</p>
+    <p>필요한 일만 하는 앱을 만드는 1인 개발 스튜디오입니다. 큰 앱을 작게 쪼개는 대신, <strong>하나의 일을 끝까지 하는 앱</strong>을 만듭니다.</p>
     <p>세 가지를 지킵니다. <strong>계정을 요구하지 않습니다</strong> — 이름도, 이메일도 받지 않습니다. <strong>처리는 기기 안에서 끝냅니다</strong> — 우리는 서버를 두지 않고, 그래서 이용자의 파일과 기록을 볼 방법이 없습니다. <strong>기능을 잠그지 않습니다</strong> — &ldquo;프리미엄&rdquo; 자물쇠 대신 광고로 운영하고, 광고는 손이 가는 자리에는 넣지 않습니다.</p>
     <p>앱을 오래 쓰게 만드는 것은 기능의 수가 아니라 <strong>매일 쓸 때의 마찰</strong>이라고 봅니다. 그래서 기능을 더하기 전에 단계를 줄이는 쪽을 먼저 봅니다.</p>
-    <p class="en">NJHouse is a one-person studio building small Android apps that do one thing. No accounts — we ask for neither your name nor your email. The work stays on your device: we run no servers, so we have no way to see your files or records. Nothing sits behind a &ldquo;premium&rdquo; lock; ads fund the apps, and never in the places your hands need.</p>
+    <p class="en">NJHouse is a one-person studio building small apps that do one thing. No accounts — we ask for neither your name nor your email. The work stays on your device: we run no servers, so we have no way to see your files or records. Nothing sits behind a &ldquo;premium&rdquo; lock; ads fund the apps, and never in the places your hands need.</p>
     <p class="en">What keeps an app in use is not the number of features but the friction of using it every day. So before adding a feature, we look for a step to remove.</p>
   </section>
 
