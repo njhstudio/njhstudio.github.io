@@ -189,6 +189,25 @@
   .desc .en { margin-top: 0.45rem; font-size: 0.8rem; color: var(--muted); }
   .card:nth-child(odd) .desc .en { color: var(--ink-muted); }
 
+  /* 두 스토어에 모두 있는 앱: 스토어 링크 줄. 카드 전체 링크(.go::after) 위로 올려 따로 누를 수 있게 한다. */
+  .stores {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: -0.2rem 0.35rem 0.85rem;
+  }
+  .stores a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.5;
+    border: 1px solid var(--accent-soft);
+    border-radius: 999px;
+    padding: 0.1rem 0.7rem;
+  }
+  .stores a:hover { border-color: var(--accent); }
+
   /* ---- about ---- */
   .about {
     margin-top: 4rem;
@@ -387,6 +406,7 @@
         </div>
         <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
       </div>
+      <p class="stores"><a href="https://play.google.com/store/apps/details?id=kr.njhouse.footing">Google Play</a><a href="https://apps.apple.com/kr/app/id6830704583">App Store</a></p>
       <div class="desc">
         <p>구독·결제 없는 등산 앱. 산행 기록과 코스 계획, 100대 명산 정상 인증, 하산 후 맛집과 SOS까지 담았어요.</p>
         <p class="en">A hiking app with no subscription: track hikes, plan routes, certify summits of the 100 famous mountains, plus food nearby and SOS.</p>
@@ -414,10 +434,10 @@
         <div class="name">
           <h2><a class="go" href="ieum/">Ieum 이음</a></h2>
           <p class="cat">24시간 원형 플래너 · Clock planner</p>
-          <span class="soon">iPhone · 출시 준비 중</span>
         </div>
         <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-6 6 6-6 6"/></svg></span>
       </div>
+      <p class="stores"><a href="https://play.google.com/store/apps/details?id=kr.njhouse.ieum">Google Play</a><a href="https://apps.apple.com/kr/app/id6831931518">App Store</a></p>
       <div class="desc">
         <p>할 일을 24시간 원형 시계 시간표 위에 놓는 플래너. 반복·알림·통계·집중 타이머를 구독 없이 써요.</p>
         <p class="en">A planner that puts your to-dos on a 24-hour clock. Repeats, alarms, stats and a focus timer, with no subscription.</p>
@@ -449,7 +469,8 @@
       <a href="privacy/baldidim.html">Baldidim</a><span class="sep">&middot;</span>
       <a href="privacy/bukjeok.html">Bukjeok</a><span class="sep">&middot;</span>
       <a href="privacy/takbon.html">TAKBON</a><span class="sep">&middot;</span>
-      <a href="privacy/ieum.html">Ieum</a>
+      <a href="privacy/ieum.html">Ieum</a><span class="sep">&middot;</span>
+      <a href="privacy/ganeum.html">Ganeum</a>
     </p>
     <p class="biz">
       24 Jeonnong-ro, Dongdaemun-gu, Seoul 02621, Republic of Korea<span class="sep">·</span>Business Registration No. 159-11-02679<span class="sep">·</span>Representative: Junsang Shin
