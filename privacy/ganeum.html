@@ -19,7 +19,7 @@
   통계청 SGIS, 한국부동산원 R-ONE, 브이월드(지도 타일·건물 데이터 API — 좌표), njhstudio.github.io/bukjeok-data(서울 집계),
   njhstudio.github.io/ganeum-data(인허가 건물 색인 — 시도·시군구 파일 이름).
   기기 저장: saved_stores.json(저장 점포·결과 요약·현장 점검 메모, 자동 백업·기기 이전 제외 D-022),
-  prefs.json(마지막 투자금), 인허가 색인 파일, 공공데이터 응답 캐시, 공유 이미지 임시 파일(캐시).
+  prefs.json(마지막 투자금·업데이트 물어본 버전·시각), Play 앱 내 업데이트(in_app_update), 인허가 색인 파일, 공공데이터 응답 캐시, 공유 이미지 임시 파일(캐시).
   점포 조건(면적·보증금·월세·권리금·투자금)은 어떤 외부 서비스에도 보내지 않는다.
 -->
 <style>
@@ -47,7 +47,7 @@
 <section lang="en">
 
 <h1>Privacy Policy — Ganeum</h1>
-<p class="date">Effective: 2026-11-20 &middot; NJHouse</p>
+<p class="date">Effective: 2026-11-22 &middot; NJHouse</p>
 
 <div class="lead">
   <p>Ganeum (&ldquo;the app&rdquo;) estimates which business types and franchise brands may suit a specific store unit in Korea, using <strong>public data</strong> and franchise disclosure documents for the building you pick on the map.</p>
@@ -74,6 +74,7 @@
 <tr><td>VWorld (Ministry of Land, Infrastructure and Transport)</td><td>Map tile positions; coordinates of the building you pick</td><td>Background map, building outline and number of floors</td></tr>
 <tr><td>Public data APIs: data.go.kr (Small Enterprise and Market Service store data, Ministry of the Interior and Safety business licenses, Ministry of Land building register), Statistics Korea SGIS, Korea Real Estate Board R-ONE</td><td>Coordinates, radius, building and area codes, business category</td><td>Shops in the building and nearby, license history of the spot, floors and units, population, rent statistics</td></tr>
 <tr><td>njhstudio.github.io (GitHub Pages)</td><td>Area codes (the file names of public data files)</td><td>Public aggregate files prepared in advance from public data (Seoul area statistics, building license history index)</td></tr>
+<tr><td>Google Play (In-App Updates, through the Play Store app on your phone)</td><td>The app&rsquo;s package name and installed version</td><td>Checking whether a newer version is available when the app starts</td></tr>
 </table>
 </div>
 <p>Each service handles requests under its own privacy policy (for example, it may keep your IP address in its access logs). Kakao: <a href="https://www.kakao.com/policy/privacy">kakao.com/policy/privacy</a> &middot; GitHub: <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a></p>
@@ -90,7 +91,7 @@
 <table>
 <tr><th>What</th><th>Why</th><th>Where</th></tr>
 <tr><td>Saved stores: building, floor/unit, the conditions you entered, a summary of the result, and field-check notes</td><td>The Saved and Compare screens</td><td>App storage on device. <strong>Excluded from Android cloud backup and device transfer</strong></td></tr>
-<tr><td>Your last investment amount</td><td>Pre-filling the conditions screen</td><td>App storage on device</td></tr>
+<tr><td>Your last investment amount; the last app version you were asked to update to and when</td><td>Pre-filling the conditions screen; not asking about the same update again for 3 days</td><td>App storage on device</td></tr>
 <tr><td>Downloaded license-history index files and cached public-data responses</td><td>Faster loading</td><td>App storage and cache on device</td></tr>
 <tr><td>Result image you choose to share</td><td>Handing the image to the share sheet</td><td>Temporary app cache</td></tr>
 </table>
@@ -128,7 +129,7 @@
 <section lang="ko">
 
 <h1>개인정보 처리방침 — 가늠</h1>
-<p class="date">시행일: 2026-11-20 &middot; NJHouse</p>
+<p class="date">시행일: 2026-11-22 &middot; NJHouse</p>
 
 <div class="lead">
   <p>가늠(이하 &ldquo;이 앱&rdquo;)은 지도에서 고른 건물의 특정 점포에 어떤 업종·프랜차이즈 브랜드가 맞을지를 <strong>공공데이터</strong>와 가맹사업 정보공개서로 추정해 보여 주는 앱입니다.</p>
@@ -155,6 +156,7 @@
 <tr><td>브이월드(국토교통부)</td><td>지도 타일 위치, 고른 건물의 좌표</td><td>배경 지도, 건물 윤곽과 층수</td></tr>
 <tr><td>공공데이터 API: 공공데이터포털(소상공인시장진흥공단 상가정보, 행정안전부 인허가, 국토교통부 건축물대장), 통계청 SGIS, 한국부동산원 R-ONE</td><td>좌표, 반경, 건물&middot;행정구역 코드, 업종</td><td>건물과 주변의 가게, 그 자리의 인허가 이력, 층&middot;호, 인구, 임대료 통계</td></tr>
 <tr><td>njhstudio.github.io(GitHub Pages)</td><td>행정구역 코드(공개 데이터 파일 이름)</td><td>공공데이터로 미리 만든 공개 집계 파일(서울 상권 통계, 건물별 인허가 이력 색인)</td></tr>
+<tr><td>Google Play(앱 내 업데이트, 휴대폰의 Play 스토어 앱을 통해)</td><td>앱 패키지 이름과 설치된 버전</td><td>앱을 켤 때 새 버전이 있는지 확인</td></tr>
 </table>
 </div>
 <p>각 서비스는 자체 개인정보처리방침에 따라 요청을 처리합니다(예: 접속 기록에 IP 주소를 남길 수 있음). 카카오: <a href="https://www.kakao.com/policy/privacy">kakao.com/policy/privacy</a> &middot; GitHub: <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a></p>
@@ -171,7 +173,7 @@
 <table>
 <tr><th>무엇</th><th>왜</th><th>어디에</th></tr>
 <tr><td>저장한 점포: 건물&middot;층&middot;호, 입력한 조건, 결과 요약, 현장 점검 메모</td><td>저장&middot;비교 화면</td><td>기기의 앱 저장소. <strong>안드로이드 클라우드 백업과 기기 이전에서 제외</strong></td></tr>
-<tr><td>마지막으로 입력한 투자금</td><td>조건 화면에 미리 채우기</td><td>기기의 앱 저장소</td></tr>
+<tr><td>마지막으로 입력한 투자금, 마지막으로 업데이트를 물어본 앱 버전과 시각</td><td>조건 화면에 미리 채우기, 같은 업데이트를 3일 동안 다시 묻지 않기</td><td>기기의 앱 저장소</td></tr>
 <tr><td>내려받은 인허가 이력 색인 파일, 공공데이터 응답 캐시</td><td>빠른 표시</td><td>기기의 앱 저장소와 캐시</td></tr>
 <tr><td>공유하려고 만든 결과 이미지</td><td>공유 창에 넘기기</td><td>앱 임시 캐시</td></tr>
 </table>
